@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+body {
+  @apply bg-cream text-navy font-sans antialiased;
+}
+
+.reveal { opacity: 0; }
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-steel text-white px-8 py-4
+           text-sm font-semibold tracking-widest uppercase
+           hover:bg-steel-light transition-all duration-300
+           border border-transparent hover:border-steel-light;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-navy text-navy px-8 py-4
+           text-sm font-semibold tracking-widest uppercase
+           hover:bg-navy hover:text-white transition-all duration-300;
+  }
+  .section-label {
+    @apply text-steel text-xs font-semibold tracking-[0.3em] uppercase mb-4;
+  }
+  .section-title {
+    @apply font-display text-4xl md:text-5xl font-bold text-navy leading-tight;
+  }
+}
