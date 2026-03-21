@@ -18,27 +18,32 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-24 bg-cream">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Content */}
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#F8F9FB,#EEF3F8)] py-28"
+    >
+      <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,rgba(74,111,165,0.18),transparent_60%)]" />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="about-item">
             <div className="section-label">About Aspia</div>
-            <h2 className="section-title mb-8">
+            <h2 className="section-title max-w-3xl">
               Engineering Excellence
-              <span className="block text-slate-light font-light italic">Since 1995</span>
+              <span className="mt-3 block text-3xl font-light italic text-slate-light md:text-4xl">
+                Since 1995
+              </span>
             </h2>
-            <p className="text-slate-light leading-relaxed mb-8 max-w-2xl">
-              ASPIA has been a trusted name in industrial solutions for over 25 years. 
-              We specialize in manufacturing high-quality valves, fittings, and engineered products 
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate">
+              ASPIA has been a trusted name in industrial solutions for over 25 years.
+              We specialize in manufacturing high-quality valves, fittings, and engineered products
               that meet the most demanding international standards.
             </p>
-            <p className="text-slate-light leading-relaxed mb-12 max-w-2xl">
-              Our commitment to innovation, quality, and customer satisfaction has made us 
-              a preferred partner for industries ranging from oil & gas to water treatment 
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate">
+              Our commitment to innovation, quality, and customer satisfaction has made us
+              a preferred partner for industries ranging from oil &amp; gas to water treatment
               and infrastructure development.
             </p>
-            <div className="flex flex-wrap gap-6">
+            <div className="mt-10 flex flex-wrap gap-5">
               <Link href="/certifications" className="btn-outline">
                 Our Certifications
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -52,22 +57,38 @@ export default function AboutSection() {
                 </svg>
               </Link>
             </div>
+            <div className="mt-10 flex flex-wrap gap-3">
+              {['Oil & Gas', 'Marine', 'Water Treatment', 'Infrastructure'].map((sector) => (
+                <span
+                  key={sector}
+                  className="rounded-full border border-slate/10 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-slate"
+                >
+                  {sector}
+                </span>
+              ))}
+            </div>
           </div>
 
-          {/* Stats */}
           <div className="about-item">
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-5">
               {[
                 ['25+', 'Years Experience'],
                 ['40+', 'Countries Served'],
                 ['1200+', 'Products'],
                 ['ISO 9001', 'Certified']
               ].map(([value, label]) => (
-                <div key={label} className="text-center">
-                  <div className="font-display text-3xl font-bold text-navy">{value}</div>
-                  <div className="text-xs text-slate tracking-widest uppercase mt-2">{label}</div>
+                <div key={label} className="panel-light px-6 py-8 text-center">
+                  <div className="font-display text-4xl font-bold text-navy">{value}</div>
+                  <div className="mt-3 text-xs uppercase tracking-[0.24em] text-slate">{label}</div>
                 </div>
               ))}
+            </div>
+            <div className="panel-light mt-5 bg-navy px-7 py-7 text-white">
+              <div className="text-xs uppercase tracking-[0.28em] text-slate-light">Global Manufacturing Partner</div>
+              <p className="mt-4 text-base leading-7 text-slate-light">
+                Built for critical environments where reliability, compliance, and fast response
+                matter just as much as engineering precision.
+              </p>
             </div>
           </div>
         </div>

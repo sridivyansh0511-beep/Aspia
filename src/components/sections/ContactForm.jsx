@@ -17,100 +17,109 @@ export default function ContactForm() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-navy">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="text-center mb-16">
+    <section ref={sectionRef} className="bg-[#091625] py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="mx-auto max-w-4xl text-center">
           <div className="section-label text-center text-slate-light">Get In Touch</div>
-          <h2 className="section-title mb-8 text-center text-white">
+          <h2 className="font-display text-[clamp(3.5rem,7vw,5.8rem)] leading-[0.92] tracking-[-0.04em] text-white">
             Contact Us
-            <span className="block text-slate-light font-light italic">Let's Connect</span>
+            <span className="mt-3 block text-3xl font-light italic text-slate-light md:text-4xl">
+              Let&apos;s Connect
+            </span>
           </h2>
-          <p className="text-slate-light max-w-3xl mx-auto">
-            Ready to discuss your industrial needs? Our team is here to provide expert solutions 
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-light">
+            Ready to discuss your industrial needs? Our team is here to provide expert solutions
             and support for your requirements.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
+        <div className="mt-16 grid gap-8 lg:grid-cols-[1.08fr_0.92fr]">
           <div className="contact-item">
-            <form className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-slate-light mb-2">Name *</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 bg-white/10 border border-slate/20 rounded-lg text-white placeholder-slate-light focus:outline-none focus:border-steel"
-                    placeholder="Your Name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-light mb-2">Company</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 bg-white/10 border border-slate/20 rounded-lg text-white placeholder-slate-light focus:outline-none focus:border-steel"
-                    placeholder="Company Name"
-                  />
-                </div>
+            <div className="panel-dark p-8 sm:p-10">
+              <div className="mb-8">
+                <div className="text-xs uppercase tracking-[0.28em] text-slate-light">Project Inquiry</div>
+                <p className="mt-4 max-w-xl text-base leading-7 text-slate-light">
+                  Share your product needs, technical specifications, or sourcing timeline and
+                  our team will respond with the right export-ready solution.
+                </p>
               </div>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-slate-light mb-2">Email *</label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 bg-white/10 border border-slate/20 rounded-lg text-white placeholder-slate-light focus:outline-none focus:border-steel"
-                    placeholder="your@email.com"
-                  />
+              <form className="space-y-6">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-light">Name *</label>
+                    <input
+                      type="text"
+                      className="input-dark"
+                      placeholder="Your Name"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-light">Company</label>
+                    <input
+                      type="text"
+                      className="input-dark"
+                      placeholder="Company Name"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-light mb-2">Phone</label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 py-3 bg-white/10 border border-slate/20 rounded-lg text-white placeholder-slate-light focus:outline-none focus:border-steel"
-                    placeholder="+1 234 567 8900"
-                  />
-                </div>
-              </div>
 
-              <div>
-                <label className="block text-sm font-medium text-slate-light mb-2">Subject *</label>
-                <select className="w-full px-4 py-3 bg-white/10 border border-slate/20 rounded-lg text-white focus:outline-none focus:border-steel">
-                  <option value="">Select a subject</option>
-                  <option value="products">Product Inquiry</option>
-                  <option value="technical">Technical Support</option>
-                  <option value="sales">Sales Information</option>
-                  <option value="partnership">Partnership Opportunities</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-light">Email *</label>
+                    <input
+                      type="email"
+                      className="input-dark"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-slate-light">Phone</label>
+                    <input
+                      type="tel"
+                      className="input-dark"
+                      placeholder="+1 234 567 8900"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-slate-light mb-2">Message *</label>
-                <textarea
-                  rows={4}
-                  className="w-full px-4 py-3 bg-white/10 border border-slate/20 rounded-lg text-white placeholder-slate-light focus:outline-none focus:border-steel"
-                  placeholder="Tell us about your requirements..."
-                />
-              </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-slate-light">Subject *</label>
+                  <select className="input-dark">
+                    <option value="">Select a subject</option>
+                    <option value="products">Product Inquiry</option>
+                    <option value="technical">Technical Support</option>
+                    <option value="sales">Sales Information</option>
+                    <option value="partnership">Partnership Opportunities</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
 
-              <button
-                type="submit"
-                className="w-full bg-steel text-white px-8 py-4 text-sm font-semibold tracking-widest uppercase border border-transparent hover:border-steel-light transition-all duration-300"
-              >
-                Send Message
-              </button>
-            </form>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-slate-light">Message *</label>
+                  <textarea
+                    rows={5}
+                    className="input-dark resize-none"
+                    placeholder="Tell us about your requirements..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="inline-flex w-full items-center justify-center rounded-full bg-steel px-8 py-4 text-sm font-semibold uppercase tracking-[0.24em] text-white transition-all duration-300 hover:bg-steel-light"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
           </div>
 
-          {/* Contact Information */}
           <div className="contact-item space-y-8">
-            <div>
-              <h3 className="font-display text-2xl font-bold text-white mb-6">Contact Information</h3>
-              
-              <div className="space-y-6">
+            <div className="panel-dark p-8 sm:p-10">
+              <h3 className="font-display text-3xl font-bold text-white">Contact Information</h3>
+
+              <div className="mt-8 space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-steel/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-steel/20">
                     <svg className="w-6 h-6 text-steel" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -159,9 +168,9 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div className="bg-steel/20 p-6 rounded-lg">
-              <h4 className="font-semibold text-white mb-3">Business Hours</h4>
-              <div className="space-y-2 text-slate-light">
+            <div className="panel-dark p-8">
+              <h4 className="font-semibold text-white">Business Hours</h4>
+              <div className="mt-5 space-y-3 text-slate-light">
                 <div className="flex justify-between">
                   <span>Monday - Friday</span>
                   <span>8:00 AM - 6:00 PM</span>

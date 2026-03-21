@@ -1,0 +1,40 @@
+{
+  "type": "Topology",
+  "objects": {
+    "countries": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {"type": "Polygon", "arcs": [[0,1,2,3,4,5]], "id": "USA", "properties": {"name": "United States"}},
+        {"type": "Polygon", "arcs": [[6,7,8,9]], "id": "CAN", "properties": {"name": "Canada"}},
+        {"type": "Polygon", "arcs": [[10,11,12,13]], "id": "MEX", "properties": {"name": "Mexico"}},
+        {"type": "Polygon", "arcs": [[14,15,16,17]], "id": "GBR", "properties": {"name": "United Kingdom"}},
+        {"type": "Polygon", "arcs": [[18,19,20,21]], "id": "DEU", "properties": {"name": "Germany"}},
+        {"type": "Polygon", "arcs": [[22,23,24,25]], "id": "FRA", "properties": {"name": "France"}},
+        {"type": "Polygon", "arcs": [[26,27,28,29]], "id": "ITA", "properties": {"name": "Italy"}},
+        {"type": "Polygon", "arcs": [[30,31,32,33]], "id": "ARE", "properties": {"name": "United Arab Emirates"}},
+        {"type": "Polygon", "arcs": [[34,35,36,37]], "id": "SAU", "properties": {"name": "Saudi Arabia"}},
+        {"type": "Polygon", "arcs": [[38,39,40,41]], "id": "QAT", "properties": {"name": "Qatar"}},
+        {"type": "Polygon", "arcs": [[42,43,44,45]], "id": "IND", "properties": {"name": "India"}},
+        {"type": "Polygon", "arcs": [[46,47,48,49]], "id": "SGP", "properties": {"name": "Singapore"}},
+        {"type": "Polygon", "arcs": [[50,51,52,53]], "id": "MYS", "properties": {"name": "Malaysia"}}
+      ]
+    }
+  },
+  "arcs": [
+    [[-125,49],[-125,25],[-66,25],[-66,49],[-125,49]],
+    [[-141,71],[-141,41],[-68,41],[-68,71],[-141,71]],
+    [[-117,32],[-117,14],[-86,14],[-86,32],[-117,32]],
+    [[-10,60],[-10,50],[2,50],[2,60],[-10,60]],
+    [[5,55],[15,55],[15,47],[5,47],[5,55]],
+    [[-2,51],[8,51],[8,43],[-2,43],[-2,51]],
+    [[8,46],[14,46],[14,38],[8,38],[8,46]],
+    [[47,25],[55,25],[55,17],[47,17],[47,25]],
+    [[52,23],[60,23],[60,15],[52,15],[52,23]],
+    [[35,10],[43,10],[43,2],[35,2],[35,10]],
+    [[73,23],[81,23],[81,15],[73,15],[73,23]],
+    [[77,21],[85,21],[85,13],[77,13],[77,21]],
+    [[68,10],[76,10],[76,2],[68,2],[68,10]],
+    [[103,8],[111,8],[111,0],[103,0],[103,8]],
+    [[100,6],[108,6],[108,-2],[100,-2],[100,6]]
+  ]
+}

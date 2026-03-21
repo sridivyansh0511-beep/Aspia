@@ -37,38 +37,35 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`sticky top-0 left-0 right-0 z-50 border-b transition-all duration-500 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate/10'
-          : 'bg-transparent'
+          ? 'border-white/10 bg-navy/[0.96] shadow-[0_18px_50px_rgba(7,16,30,0.45)] backdrop-blur-xl'
+          : 'border-white/5 bg-navy/90 backdrop-blur-lg'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-9 h-9 bg-steel flex items-center justify-center">
-            <span className="text-white font-display font-bold text-sm">A</span>
+          <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 shadow-inner shadow-white/10 transition-transform duration-300 group-hover:scale-105">
+            <span className="text-white font-display text-base font-bold">A</span>
           </div>
-          <span
-            className={`font-display text-xl font-bold tracking-wider transition-colors duration-300 ${
-              scrolled ? 'text-navy' : 'text-white'
-            }`}
-          >
-            ASPIA
-          </span>
+          <div className="leading-none">
+            <div className="font-display text-2xl font-bold tracking-[0.22em] text-white">ASPIA</div>
+            <div className="mt-1 text-[10px] uppercase tracking-[0.38em] text-slate-light/80">
+              Global Industrial Exports
+            </div>
+          </div>
         </Link>
 
-        {/* Desktop Links */}
         <ul className="hidden lg:flex items-center gap-10">
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
               <Link
                 href={href}
-                className={`text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 relative
-                  after:absolute after:bottom-[-4px] after:left-0 after:h-px after:bg-steel after:transition-all after:duration-300
-                  ${pathname === href ? 'after:w-full' : 'after:w-0 hover:after:w-full'}
-                  ${scrolled ? 'text-navy/70 hover:text-navy' : 'text-white/80 hover:text-white'}
-                `}
+                className={`relative text-xs font-semibold uppercase tracking-[0.22em] transition-all duration-300 after:absolute after:bottom-[-8px] after:left-0 after:h-px after:bg-steel-light after:transition-all after:duration-300 ${
+                  pathname === href
+                    ? 'text-white after:w-full'
+                    : 'text-white/75 after:w-0 hover:text-white hover:after:w-full'
+                }`}
               >
                 {label}
               </Link>
@@ -76,21 +73,15 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
         <Link
           href="/contact"
-          className={`hidden lg:inline-flex items-center gap-2 px-6 py-3 text-xs font-semibold tracking-widest uppercase border transition-all duration-300 ${
-            scrolled
-              ? 'border-navy text-navy hover:bg-navy hover:text-white'
-              : 'border-white text-white hover:bg-white hover:text-navy'
-          }`}
+          className="hidden lg:inline-flex items-center gap-2 rounded-full border border-steel-light/70 bg-steel-light/15 px-6 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-white transition-all duration-300 hover:border-steel-light hover:bg-steel-light hover:text-white"
         >
           Get in Touch
         </Link>
 
-        {/* Mobile Toggle */}
         <button
-          className={`lg:hidden flex flex-col gap-1.5 ${scrolled ? 'text-navy' : 'text-white'}`}
+          className="flex flex-col gap-1.5 text-white lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -100,20 +91,30 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
-      <div className={`lg:hidden bg-navy transition-all duration-500 overflow-hidden ${menuOpen ? 'max-h-screen' : 'max-h-0'}`}>
-        <ul className="flex flex-col px-6 pb-8 pt-4 gap-6">
+      <div className={`overflow-hidden border-t border-white/5 bg-navy/95 transition-all duration-500 lg:hidden ${menuOpen ? 'max-h-screen' : 'max-h-0'}`}>
+        <ul className="flex flex-col gap-6 px-6 pb-8 pt-5">
           {NAV_LINKS.map(({ href, label }) => (
             <li key={href}>
               <Link
                 href={href}
                 onClick={() => setMenuOpen(false)}
-                className="text-white/80 text-sm font-semibold tracking-widest uppercase hover:text-white transition-colors"
+                className={`text-sm font-semibold uppercase tracking-[0.24em] transition-colors ${
+                  pathname === href ? 'text-white' : 'text-white/75 hover:text-white'
+                }`}
               >
                 {label}
               </Link>
             </li>
           ))}
+          <li>
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex rounded-full border border-steel-light/70 bg-steel-light/15 px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-white transition-colors hover:bg-steel-light"
+            >
+              Get in Touch
+            </Link>
+          </li>
         </ul>
       </div>
     </header>

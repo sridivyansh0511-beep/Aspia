@@ -9,24 +9,38 @@ body {
   @apply bg-cream text-navy font-sans antialiased;
 }
 
+body::selection {
+  @apply bg-steel-light text-white;
+}
+
 .reveal { opacity: 0; }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-steel text-white px-8 py-4
+    @apply inline-flex items-center gap-2 rounded-full bg-steel text-white px-8 py-4
            text-sm font-semibold tracking-widest uppercase
+           shadow-[0_18px_40px_rgba(26,51,88,0.24)]
            hover:bg-steel-light transition-all duration-300
            border border-transparent hover:border-steel-light;
   }
   .btn-outline {
-    @apply inline-flex items-center gap-2 border border-navy text-navy px-8 py-4
+    @apply inline-flex items-center gap-2 rounded-full border border-navy text-navy px-8 py-4
            text-sm font-semibold tracking-widest uppercase
            hover:bg-navy hover:text-white transition-all duration-300;
   }
   .section-label {
-    @apply text-steel text-xs font-semibold tracking-[0.3em] uppercase mb-4;
+    @apply mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-steel;
   }
   .section-title {
-    @apply font-display text-4xl md:text-5xl font-bold text-navy leading-tight;
+    @apply font-display text-5xl font-bold leading-[0.95] tracking-[-0.03em] text-navy md:text-6xl;
+  }
+  .panel-light {
+    @apply rounded-[24px] border border-slate/10 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.06)];
+  }
+  .panel-dark {
+    @apply rounded-[28px] border border-white/10 bg-white/[0.03] shadow-[0_24px_70px_rgba(2,8,18,0.35)];
+  }
+  .input-dark {
+    @apply w-full rounded-2xl border border-white/[0.12] bg-white/[0.05] px-4 py-4 text-white placeholder:text-slate-light/70 focus:border-steel-light focus:outline-none;
   }
 }

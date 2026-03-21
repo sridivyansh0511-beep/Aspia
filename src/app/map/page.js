@@ -1,9 +1,9 @@
-import ExportMap from '@/components/sections/ExportMap';
+import D3ExportMap from '@/components/sections/D3ExportMap';
 
 export default function Map() {
   return (
     <main>
-      <ExportMap />
+      <D3ExportMap />
     </main>
   );
 }

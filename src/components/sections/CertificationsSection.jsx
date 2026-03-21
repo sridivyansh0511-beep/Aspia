@@ -40,52 +40,57 @@ export default function CertificationsSection() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-cream">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="text-center mb-16">
+    <section ref={sectionRef} className="bg-[#F3F6FA] py-28">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="mx-auto mb-16 max-w-4xl text-center">
           <div className="section-label text-center">Quality Assurance</div>
-          <h2 className="section-title mb-8 text-center">
+          <h2 className="section-title text-center">
             Certifications
-            <span className="block text-slate-light font-light italic">Industry Recognition</span>
+            <span className="mt-3 block text-3xl font-light italic text-slate-light md:text-4xl">
+              Industry Recognition
+            </span>
           </h2>
-          <p className="text-slate-light max-w-3xl mx-auto">
-            Our commitment to quality is demonstrated through internationally recognized 
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate">
+            Our commitment to quality is demonstrated through internationally recognized
             certifications and compliance with industry standards.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {certifications.map((cert, index) => (
             <div key={index} className="cert-item">
-              <div className="bg-white p-6 rounded-lg shadow-sm h-full">
-                <div className="w-16 h-16 bg-steel/10 rounded-lg flex items-center justify-center mb-4">
-                  <div className="w-8 h-8 bg-steel rounded" />
+              <div className="panel-light h-full px-6 py-7">
+                <div className="mb-6 flex items-center justify-between">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-steel/10">
+                    <div className="h-8 w-8 rounded-lg bg-steel" />
+                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-[0.28em] text-slate">
+                    0{index + 1}
+                  </span>
                 </div>
-                <h3 className="font-display text-xl font-bold text-navy mb-2">{cert.name}</h3>
-                <p className="text-slate-light text-sm mb-3">{cert.description}</p>
-                <div className="inline-block px-3 py-1 bg-slate/10 rounded-full">
-                  <span className="text-xs font-semibold text-slate">{cert.category}</span>
+                <h3 className="font-display text-2xl font-bold text-navy">{cert.name}</h3>
+                <p className="mb-4 mt-3 text-sm leading-7 text-slate">{cert.description}</p>
+                <div className="inline-flex rounded-full border border-slate/10 bg-slate/5 px-4 py-2">
+                  <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate">
+                    {cert.category}
+                  </span>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-6 text-slate-light">
-            <div className="text-center">
-              <div className="font-display text-3xl font-bold text-navy">15+</div>
-              <div className="text-sm">Certifications</div>
+        <div className="mt-16 grid gap-5 sm:grid-cols-3">
+          {[
+            ['15+', 'Certifications'],
+            ['100%', 'Compliance Rate'],
+            ['25+', 'Years Certified'],
+          ].map(([value, label]) => (
+            <div key={label} className="panel-light px-6 py-7 text-center">
+              <div className="font-display text-4xl font-bold text-navy">{value}</div>
+              <div className="mt-3 text-xs uppercase tracking-[0.24em] text-slate">{label}</div>
             </div>
-            <div className="text-center">
-              <div className="font-display text-3xl font-bold text-navy">100%</div>
-              <div className="text-sm">Compliance Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="font-display text-3xl font-bold text-navy">25+</div>
-              <div className="text-sm">Years Certified</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
