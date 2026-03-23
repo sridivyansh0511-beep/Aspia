@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 import Link from 'next/link';
 
@@ -37,6 +38,16 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 lg:px-12">
         <div className="max-w-4xl">
+          <div className="hero-content mb-8">
+            <Image
+              src="/aspia-logo-transparent.png"
+              alt="Aspia"
+              width={1002}
+              height={388}
+              priority
+              className="h-auto w-[168px] drop-shadow-[0_18px_34px_rgba(2,8,18,0.35)] md:w-[210px] lg:w-[248px]"
+            />
+          </div>
           <div className="hero-content mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.34em] text-slate-light/90">
             Precision Engineering For Global Supply Chains
           </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { gsap } from 'gsap';
@@ -44,16 +45,15 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 shadow-inner shadow-white/10 transition-transform duration-300 group-hover:scale-105">
-            <span className="text-white font-display text-base font-bold">A</span>
-          </div>
-          <div className="leading-none">
-            <div className="font-display text-2xl font-bold tracking-[0.22em] text-white">ASPIA</div>
-            <div className="mt-1 text-[10px] uppercase tracking-[0.38em] text-slate-light/80">
-              Global Industrial Exports
-            </div>
-          </div>
+        <Link href="/" className="group flex items-center" aria-label="Aspia home">
+          <Image
+            src="/aspia-logo-transparent.png"
+            alt="Aspia"
+            width={1002}
+            height={388}
+            priority
+            className="h-auto w-[132px] drop-shadow-[0_10px_24px_rgba(0,0,0,0.28)] transition-transform duration-300 group-hover:scale-[1.02] sm:w-[156px] lg:w-[188px]"
+          />
         </Link>
 
         <ul className="hidden lg:flex items-center gap-10">
