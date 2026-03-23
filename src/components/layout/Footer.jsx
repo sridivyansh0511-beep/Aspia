@@ -3,20 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const FOOTER_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/products', label: 'Products' },
-  { href: '/certifications', label: 'Certifications' },
-  { href: '/map', label: 'Export Map' },
-  { href: '/contact', label: 'Contact' },
-];
-
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#071220]">
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-12">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-md">
             <Link href="/" className="inline-flex" aria-label="Aspia home">
               <Image
@@ -29,20 +20,13 @@ export default function Footer() {
             </Link>
             <p className="mt-5 text-sm leading-7 text-slate-light">
               Precision-engineered industrial exports for critical sectors worldwide,
-              from oil and gas to infrastructure and marine applications.
+              with a cleaner footer that keeps the focus on your content instead of repeating
+              the page navigation.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-x-8 gap-y-4">
-            {FOOTER_LINKS.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-light/80 transition-colors hover:text-white"
-              >
-                {label}
-              </Link>
-            ))}
+          <div className="rounded-full border border-white/10 bg-white/[0.04] px-5 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-slate-light/80">
+            Professional Industrial Communication
           </div>
         </div>
 
