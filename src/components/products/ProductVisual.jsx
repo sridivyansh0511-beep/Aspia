@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 const TONES = {
   aqua: {
     from: "#F2FBFF",
@@ -175,6 +177,26 @@ function VialVisual({ palette, label, strength }) {
 
 export default function ProductVisual({ product }) {
   const palette = TONES[product.tone] || TONES.blue;
+
+  if (product.image) {
+    return (
+      <div className="relative aspect-[6/5] overflow-hidden rounded-[26px] border border-slate/10 bg-[#F3F4F8]">
+        <Image
+          src={product.image}
+          alt={`${product.name} packaging`}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1536px) 50vw, 33vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),transparent_38%,rgba(255,255,255,0.16))]" />
+
+        <div className="absolute left-4 top-4 rounded-full border border-white/70 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-navy shadow-[0_8px_20px_rgba(15,23,42,0.08)]">
+          {product.id}
+        </div>
+      </div>
+    );
+  }
+
   const renderVisual = () => {
     if (product.visual === "bag") {
       return <BagVisual palette={palette} label={product.id} strength={product.strength} />;

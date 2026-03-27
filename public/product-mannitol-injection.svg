@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="130" y1="80" x2="1090" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2F1F6"/>
+      <stop offset="0.42" stop-color="#D7CFF0"/>
+      <stop offset="1" stop-color="#E9E7EF"/>
+    </linearGradient>
+    <linearGradient id="windowGlow" x1="0" y1="0" x2="260" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCFCFE" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="surface" x1="0" y1="670" x2="1200" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6F6F9"/>
+      <stop offset="1" stop-color="#E0E1E7"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="470" y1="128" x2="748" y2="792" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.88"/>
+      <stop offset="0.45" stop-color="#FAFAFD" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#F3F4F8" stop-opacity="0.82"/>
+    </linearGradient>
+    <linearGradient id="neck" x1="530" y1="76" x2="688" y2="182" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#E4E6ED" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="cap" x1="522" y1="60" x2="691" y2="110" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7F7F8"/>
+      <stop offset="1" stop-color="#A7A9AE"/>
+    </linearGradient>
+    <linearGradient id="label" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FAFAFB"/>
+      <stop offset="1" stop-color="#F0F1F4"/>
+    </linearGradient>
+    <filter id="softBlur" x="-200" y="-200" width="1600" height="1400" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="48"/>
+    </filter>
+    <filter id="shadow" x="380" y="165" width="460" height="680" filterUnits="userSpaceOnUse">
+      <feOffset dy="16"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feColorMatrix values="0 0 0 0 0.342 0 0 0 0 0.377 0 0 0 0 0.46 0 0 0 0.18 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1000" fill="url(#bg)"/>
+  <rect width="270" height="1000" fill="url(#windowGlow)"/>
+  <rect x="246" width="22" height="720" fill="#FCFCFE" opacity="0.92"/>
+
+  <g filter="url(#softBlur)">
+    <circle cx="560" cy="280" r="220" fill="#9F87E7" fill-opacity="0.42"/>
+    <circle cx="880" cy="250" r="190" fill="#FFFFFF" fill-opacity="0.34"/>
+  </g>
+
+  <rect y="690" width="1200" height="310" fill="url(#surface)"/>
+  <path d="M60 790C180 750 340 762 520 814C645 851 812 857 1140 777" stroke="#C9CDD6" stroke-width="10" stroke-linecap="round" opacity="0.55"/>
+  <path d="M120 856C246 823 340 825 444 854C563 887 707 890 958 830" stroke="#D7DAE2" stroke-width="7" stroke-linecap="round" opacity="0.5"/>
+  <path d="M690 734C794 709 910 716 1100 756" stroke="#D9DCE4" stroke-width="8" stroke-linecap="round" opacity="0.46"/>
+  <path d="M184 922C322 888 444 895 598 930" stroke="#D1D5DE" stroke-width="6" stroke-linecap="round" opacity="0.42"/>
+  <ellipse cx="602" cy="770" rx="176" ry="34" fill="#8E95A6" fill-opacity="0.16"/>
+
+  <g filter="url(#shadow)">
+    <path d="M528 125H676V184C676 208 689 230 713 246C753 275 778 331 778 393V623C778 724 701 806 607 806H597C503 806 426 724 426 623V393C426 331 451 275 491 246C515 230 528 208 528 184V125Z" fill="url(#glass)"/>
+  </g>
+
+  <path d="M528 125H676V184C676 208 689 230 713 246C753 275 778 331 778 393V623C778 724 701 806 607 806H597C503 806 426 724 426 623V393C426 331 451 275 491 246C515 230 528 208 528 184V125Z" fill="url(#glass)" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="6"/>
+  <path d="M548 128H656V186C656 214 670 238 692 254C724 277 744 326 744 386V616C744 700 680 769 601 769H595C516 769 452 700 452 616V386C452 326 472 277 504 254C526 238 540 214 540 186V142C540 134 543 128 548 128Z" fill="#FFFFFF" fill-opacity="0.22"/>
+  <path d="M542 154H662" stroke="#B58AF0" stroke-opacity="0.4" stroke-width="7"/>
+  <path d="M484 228C509 206 538 196 602 196C666 196 695 206 720 228" stroke="#FFFFFF" stroke-opacity="0.52" stroke-width="7" stroke-linecap="round"/>
+
+  <rect x="518" y="76" width="168" height="38" rx="18" fill="url(#cap)"/>
+  <rect x="540" y="62" width="124" height="20" rx="10" fill="#ECEDEF"/>
+  <rect x="552" y="111" width="100" height="44" rx="16" fill="url(#neck)" fill-opacity="0.84"/>
+
+  <rect x="500" y="278" width="205" height="258" rx="14" fill="url(#label)" stroke="#DFE1E7" stroke-width="3"/>
+  <rect x="500" y="358" width="205" height="17" rx="0" fill="#6E4A8E"/>
+  <rect x="500" y="373" width="205" height="5" fill="#3A2A48" fill-opacity="0.7"/>
+
+  <text x="526" y="324" fill="#25272B" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="0.04em">
+    <tspan x="526" dy="0">THE ASPIA RANGE</tspan>
+    <tspan x="526" dy="22">OF PARENTERALS</tspan>
+  </text>
+
+  <text x="532" y="431" fill="#232427" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="500">
+    <tspan x="532" dy="0">Mannitol</tspan>
+    <tspan x="532" dy="30">Injection I.P. 20%</tspan>
+  </text>
+
+  <text x="532" y="505" fill="#4A4C55" font-family="Arial, Helvetica, sans-serif" font-size="13">
+    <tspan x="532" dy="0">500 ml</tspan>
+    <tspan x="532" dy="19">For Intravenous Use Only</tspan>
+    <tspan x="532" dy="19">Store Below 30°C</tspan>
+    <tspan x="532" dy="19">Lot No.</tspan>
+    <tspan x="532" dy="19">Mfg. Date</tspan>
+    <tspan x="532" dy="19">Exp. Date</tspan>
+  </text>
+
+  <text x="655" y="409" fill="#4E5159" font-family="Arial, Helvetica, sans-serif" font-size="8.5">
+    <tspan x="655" dy="0">Storage precautions and</tspan>
+    <tspan x="655" dy="12">composition details</tspan>
+    <tspan x="655" dy="12">appear on the side panel.</tspan>
+  </text>
+
+  <path d="M475 246C497 226 534 212 602 212C670 212 707 226 729 246" stroke="#FFFFFF" stroke-opacity="0.34" stroke-width="18" stroke-linecap="round"/>
+  <path d="M474 300C492 286 518 276 540 276V764C506 757 478 734 461 704C446 677 438 648 438 612V403C438 353 452 320 474 300Z" fill="#FFFFFF" fill-opacity="0.13"/>
+  <path d="M701 279C725 299 741 335 748 389V612C748 655 740 689 725 714C708 742 682 761 650 767V279C671 279 688 286 701 279Z" fill="#FFFFFF" fill-opacity="0.08"/>
+</svg>

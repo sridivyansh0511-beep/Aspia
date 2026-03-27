@@ -13,6 +13,6 @@ const nextConfig = {
     if (dev) config.cache = false;
     return config;
   },
-  // turbopack: {}, // Disabled to fix WASM binding issue
+  turbopack: {}, // Enabled to fix Turbopack configuration error
 };
 module.exports = nextConfig;

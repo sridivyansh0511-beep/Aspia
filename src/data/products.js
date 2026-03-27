@@ -3,6 +3,7 @@ export const PRODUCTS = [
     id: "01",
     featured: true,
     category: "IV Nutrition",
+    image: "/dextrose.jpeg",
     visual: "bag",
     tone: "aqua",
     strength: "5% / 10% / 25% / 50% w/v",
@@ -23,6 +24,7 @@ export const PRODUCTS = [
   {
     id: "03",
     category: "Electrolyte Balance",
+    image: "/nacl.jpeg",
     visual: "bottle",
     tone: "blue",
     strength: "0.9% w/v",
@@ -135,6 +137,7 @@ export const PRODUCTS = [
   {
     id: "14",
     category: "Specialty Care",
+    image: "/mannitol.jpeg",
     visual: "vial",
     tone: "amber",
     strength: "20%",
@@ -142,9 +145,10 @@ export const PRODUCTS = [
     description: "Osmotic diuretic infusion used in specialist fluid management protocols.",
     tags: ["Osmotic Therapy", "Specialty Care", "Critical Support"],
   },
-  {
+{
     id: "15",
     category: "Electrolyte Balance",
+    image: "/nscl3.jpeg",
     visual: "bottle",
     tone: "violet",
     strength: "3% w/v",
@@ -166,6 +170,7 @@ export const PRODUCTS = [
     id: "17",
     featured: true,
     category: "Therapeutic Infusions",
+    image: "/para.jpeg",
     visual: "bottle",
     tone: "teal",
     strength: "1%",
@@ -176,6 +181,7 @@ export const PRODUCTS = [
   {
     id: "18",
     category: "Therapeutic Infusions",
+    image: "/cipro.jpeg",
     visual: "vial",
     tone: "amber",
     strength: "I.P.",
@@ -186,6 +192,7 @@ export const PRODUCTS = [
   {
     id: "19",
     category: "Therapeutic Infusions",
+    image: "/metronid.jpeg",
     visual: "vial",
     tone: "rose",
     strength: "I.P.",
@@ -196,6 +203,7 @@ export const PRODUCTS = [
   {
     id: "20",
     category: "Therapeutic Infusions",
+    image: "/oflaxin.jpeg",
     visual: "bottle",
     tone: "violet",
     strength: "I.P.",
@@ -206,6 +214,7 @@ export const PRODUCTS = [
   {
     id: "21",
     category: "IV Nutrition",
+    image: "/fructose.jpeg",
     visual: "bottle",
     tone: "teal",
     strength: "10% w/v",
@@ -217,6 +226,7 @@ export const PRODUCTS = [
     id: "22",
     featured: true,
     category: "Irrigation Solutions",
+    image: "/glycine.jpeg",
     visual: "vial",
     tone: "amber",
     strength: "1.5% w/v",
@@ -237,6 +247,7 @@ export const PRODUCTS = [
   {
     id: "24",
     category: "IV Nutrition",
+    image: "/invert.jpeg",
     visual: "vial",
     tone: "rose",
     strength: "I.P.",
@@ -254,9 +265,10 @@ export const PRODUCTS = [
     description: "Half-normal saline formulation aligned to U.S.P. specifications for tailored fluid therapy.",
     tags: ["U.S.P.", "Half Normal Saline", "Fluid Therapy"],
   },
-  {
+{
     id: "26",
     category: "Therapeutic Infusions",
+    image: "/fluco.jpeg",
     visual: "bottle",
     tone: "blue",
     strength: "200mg",
@@ -264,9 +276,10 @@ export const PRODUCTS = [
     description: "Fluconazole formulation positioned for reliable antifungal therapy support.",
     tags: ["Antifungal", "U.S.P.", "Therapeutic Use"],
   },
-  {
+{
     id: "27",
     category: "Therapeutic Infusions",
+    image: "/tinidazole.jpeg",
     visual: "vial",
     tone: "rose",
     strength: "I.P.",
