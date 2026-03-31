@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import { gsap } from 'gsap';
 import Link from 'next/link';
 
@@ -38,41 +37,33 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 lg:px-12">
         <div className="max-w-4xl">
-          <div className="hero-content mb-8">
-            <Image
-              src="/aspia-logo-transparent.png"
-              alt="Aspia"
-              width={1002}
-              height={388}
-              priority
-              className="h-auto w-[168px] drop-shadow-[0_18px_34px_rgba(2,8,18,0.35)] md:w-[210px] lg:w-[248px]"
-            />
-          </div>
           <div className="hero-content mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.34em] text-slate-light/90">
-            Precision Engineering For Global Supply Chains
+            Your First-Line Choice For Water And Electrolytes Replacement Therapy
           </div>
           <h1 className="hero-content font-display text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
-            ASPIA
+            Care, Quality,
+            <span className="mt-3 block">Commitment</span>
             <span className="mt-3 block text-3xl font-light text-slate-light md:text-4xl lg:text-5xl">
-              Engineering Excellence, Delivered Worldwide
+              in every single drop.
             </span>
           </h1>
           <p className="hero-content mt-8 max-w-3xl text-lg leading-relaxed text-slate-light md:text-2xl">
-            Precision-engineered solutions for global industries. Trusted partner for valves,
-            fittings, and industrial components since 1995.
+            ASPIA Parenterals Pvt. Ltd. manufactures high-quality parenteral fluids in
+            large volumes with modern production lines, automated technology, and a
+            quality-first approach built for dependable healthcare supply.
           </p>
           <div className="hero-content mt-12 flex flex-wrap items-center gap-5">
             <Link href="/products" className="btn-primary">
-              Explore Products
+              Explore Product Range
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4-4m4 4l-4-4" />
               </svg>
             </Link>
             <Link
-              href="/contact"
+              href="/about"
               className="inline-flex items-center gap-2 rounded-full border border-white/25 px-8 py-4 text-sm font-semibold uppercase tracking-[0.24em] text-white transition-all duration-300 hover:bg-white hover:text-navy"
             >
-              Get in Touch
+              About Aspia
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -80,9 +71,9 @@ export default function Hero() {
           </div>
           <div className="hero-content mt-14 grid max-w-3xl gap-4 sm:grid-cols-3">
             {[
-              ['25+', 'Years of export experience'],
-              ['40+', 'Countries served'],
-              ['ISO', 'Quality-led manufacturing'],
+              ['cGMP', 'Compliant manufacturing facility'],
+              ['FFS / BFS / Glass', 'Modern packaging platforms'],
+              ['Promise', 'Parenteral with a Promise'],
             ].map(([value, label]) => (
               <div
                 key={label}

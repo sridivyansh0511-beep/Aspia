@@ -13,6 +13,5 @@ const nextConfig = {
     if (dev) config.cache = false;
     return config;
   },
-  turbopack: {}, // Enabled to fix Turbopack configuration error
 };
 module.exports = nextConfig;
