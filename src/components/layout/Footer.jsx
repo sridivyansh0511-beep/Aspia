@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="max-w-md">
             <Link href="/" className="inline-flex" aria-label="Aspia home">
               <Image
-                src="/aspia-logo-transparent.png"
+                src="/aspia-logo-transparent-clean.png"
                 alt="Aspia"
                 width={1002}
                 height={388}

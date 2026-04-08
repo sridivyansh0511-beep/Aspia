@@ -43,7 +43,7 @@ export default function SplashScreen() {
     >
       <div className="flex flex-col items-center justify-center gap-8 px-6">
         <Image
-          src="/aspia-logo-transparent.png"
+              src="/aspia-logo-transparent-clean.png"
           alt="Aspia"
           width={1002}
           height={388}

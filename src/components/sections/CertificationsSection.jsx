@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 
 export default function CertificationsSection() {
@@ -18,29 +19,25 @@ export default function CertificationsSection() {
 
   const certifications = [
     {
+      name: 'CGMP & GLP',
+      description:
+        'Good Manufacturing Practice and Good Laboratory Practice certification supporting disciplined production and quality controls.',
+      category: 'Manufacturing Excellence',
+      image: '/certificates/glp-cgmp.png',
+      accent: 'from-[#effaf3] via-white to-[#f5fbf2]',
+    },
+    {
       name: 'ISO 9001:2015',
-      description: 'Quality Management Systems',
-      category: 'Quality'
-    },
-    {
-      name: 'API 6D',
-      description: 'Pipeline Valves Specification',
-      category: 'Industry Standard'
-    },
-    {
-      name: 'CE Marking',
-      description: 'European Conformity Certification',
-      category: 'Compliance'
-    },
-    {
-      name: 'ASME B16.34',
-      description: 'Valves - Flanged, Threaded, and Welding End',
-      category: 'Technical Standard'
+      description:
+        'International quality management certification demonstrating documented systems, process consistency, and continuous improvement.',
+      category: 'Quality Management',
+      image: '/certificates/iso-9001-2015.png',
+      accent: 'from-[#eef6ff] via-white to-[#f8fbff]',
     }
   ];
 
   return (
-    <section ref={sectionRef} className="bg-[#F3F6FA] py-28">
+    <section id="certifications" ref={sectionRef} className="bg-[#F3F6FA] py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="mx-auto mb-16 max-w-4xl text-center">
           <div className="section-label text-center">Quality Assurance</div>
@@ -51,29 +48,45 @@ export default function CertificationsSection() {
             </span>
           </h2>
           <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate">
-            Our commitment to quality is demonstrated through internationally recognized
-            certifications and compliance with industry standards.
+            Our commitment to quality is backed by verified certifications that reinforce
+            dependable manufacturing, documented systems, and export-ready standards.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 lg:grid-cols-2">
           {certifications.map((cert, index) => (
             <div key={index} className="cert-item">
-              <div className="panel-light h-full px-6 py-7">
-                <div className="mb-6 flex items-center justify-between">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-steel/10">
-                    <div className="h-8 w-8 rounded-lg bg-steel" />
+              <div className="panel-light h-full overflow-hidden">
+                <div className={`bg-gradient-to-br ${cert.accent} px-6 py-6 md:px-8 md:py-8`}>
+                  <div className="mb-5 flex items-center justify-between gap-4">
+                    <div className="inline-flex rounded-full border border-slate/10 bg-white/85 px-4 py-2">
+                      <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-slate">
+                        {cert.category}
+                      </span>
+                    </div>
+                    <span className="text-xs font-semibold uppercase tracking-[0.28em] text-slate/70">
+                      0{index + 1}
+                    </span>
                   </div>
-                  <span className="text-xs font-semibold uppercase tracking-[0.28em] text-slate">
-                    0{index + 1}
-                  </span>
+
+                  <div className="rounded-[28px] border border-slate/10 bg-white px-4 py-4 shadow-[0_18px_40px_rgba(15,23,42,0.08)] md:px-6 md:py-6">
+                    <div className="relative mx-auto aspect-[5/4] w-full max-w-[320px]">
+                      <Image
+                        src={cert.image}
+                        alt={cert.name}
+                        fill
+                        className="object-contain"
+                        sizes="(min-width: 1024px) 320px, 100vw"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-display text-2xl font-bold text-navy">{cert.name}</h3>
-                <p className="mb-4 mt-3 text-sm leading-7 text-slate">{cert.description}</p>
-                <div className="inline-flex rounded-full border border-slate/10 bg-slate/5 px-4 py-2">
-                  <span className="text-xs font-semibold uppercase tracking-[0.22em] text-slate">
-                    {cert.category}
-                  </span>
+
+                <div className="px-6 pb-7 pt-6 md:px-8">
+                  <h3 className="font-display text-3xl font-bold text-navy">{cert.name}</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate md:text-[15px]">
+                    {cert.description}
+                  </p>
                 </div>
               </div>
             </div>
@@ -82,9 +95,9 @@ export default function CertificationsSection() {
 
         <div className="mt-16 grid gap-5 sm:grid-cols-3">
           {[
-            ['15+', 'Certifications'],
-            ['100%', 'Compliance Rate'],
-            ['25+', 'Years Certified'],
+            ['02', 'Verified Certifications'],
+            ['GMP', 'Manufacturing Discipline'],
+            ['ISO', 'Documented Quality Systems'],
           ].map(([value, label]) => (
             <div key={label} className="panel-light px-6 py-7 text-center">
               <div className="font-display text-4xl font-bold text-navy">{value}</div>

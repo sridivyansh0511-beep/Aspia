@@ -1,9 +1,5 @@
-import CertificationsSection from '@/components/sections/CertificationsSection';
+import { redirect } from 'next/navigation';
 
 export default function Certifications() {
-  return (
-    <main className="bg-cream">
-      <CertificationsSection />
-    </main>
-  );
+  redirect('/#certifications');
 }

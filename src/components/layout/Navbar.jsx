@@ -10,8 +10,6 @@ const NAV_LINKS = [
   { href: '/',               label: 'Home' },
   { href: '/about',          label: 'About' },
   { href: '/products',       label: 'Products' },
-  { href: '/certifications', label: 'Certifications' },
-  { href: '/map',            label: 'Export Map' },
   { href: '/contact',        label: 'Contact' },
 ];
 
@@ -47,7 +45,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
         <Link href="/" className="group flex items-center" aria-label="Aspia home">
           <Image
-            src="/aspia-logo-transparent.png"
+            src="/aspia-logo-transparent-clean.png"
             alt="Aspia"
             width={1002}
             height={388}

@@ -298,7 +298,7 @@ export default function D3ExportMap() {
   };
 
   return (
-    <section ref={sectionRef} className="bg-[#091625] py-28 md:py-32">
+    <section id="export-map" ref={sectionRef} className="bg-[#091625] py-28 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="map-item">
           <h2 className="max-w-6xl font-display text-[clamp(4rem,8vw,6.5rem)] leading-[0.9] tracking-[-0.04em] text-white">

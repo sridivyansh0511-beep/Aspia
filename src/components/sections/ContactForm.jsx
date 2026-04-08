@@ -69,30 +69,12 @@ function ArrowUpRightIcon() {
   );
 }
 
-const contactHighlights = [
-  {
-    title: 'Email For Quotations',
-    description:
-      'Use email for pricing requests, documentation, product details, and formal business communication.',
-  },
-  {
-    title: 'Phone For Urgent Coordination',
-    description:
-      'Call directly when you need faster operational support, quick clarifications, or immediate assistance.',
-  },
-  {
-    title: 'Social For Public Presence',
-    description:
-      'X and Instagram remain available for brand visibility and public-facing company updates.',
-  },
-];
-
-const contactDetails = [
+const primaryContacts = [
   {
     title: 'Email',
     value: emailAddress,
     href: mailtoLink,
-    description: 'Best for quotations, documentation, and business inquiries.',
+    description: 'For quotations, documents, and business inquiries.',
     icon: <MailIcon />,
     actionLabel: 'Open Draft',
   },
@@ -100,9 +82,9 @@ const contactDetails = [
     title: 'Phone',
     value: phoneNumber,
     href: telLink,
-    description: 'Ideal for urgent communication and immediate assistance.',
+    description: 'For urgent coordination and quick assistance.',
     icon: <PhoneIcon />,
-    actionLabel: 'Call Desk',
+    actionLabel: 'Call Now',
   },
 ];
 
@@ -111,7 +93,6 @@ const socialChannels = [
     title: 'X',
     value: xHandle,
     href: xLink,
-    description: 'Corporate updates and public-facing announcements.',
     icon: <XIcon />,
     badgeClassName: 'bg-white/10',
   },
@@ -119,17 +100,10 @@ const socialChannels = [
     title: 'Instagram',
     value: instagramHandle,
     href: instagramLink,
-    description: 'Brand presence, product highlights, and visual updates.',
     icon: <InstagramIcon />,
     badgeClassName:
       'bg-[linear-gradient(135deg,rgba(253,224,71,0.34),rgba(236,72,153,0.28),rgba(96,165,250,0.24))]',
   },
-];
-
-const supportPoints = [
-  'Clear routes for buyers, distributors, and partners.',
-  'Professional communication without unnecessary form fields.',
-  'Official digital touchpoints presented in one clean section.',
 ];
 
 export default function ContactForm() {
@@ -142,175 +116,121 @@ export default function ContactForm() {
       return;
     }
 
-    const tl = gsap.timeline({ delay: 0.35 });
-
-    tl.fromTo(
+    gsap.fromTo(
       items,
-      { opacity: 0, y: 60 },
-      { opacity: 1, y: 0, duration: 0.95, stagger: 0.16, ease: 'power3.out' }
+      { opacity: 0, y: 48 },
+      { opacity: 1, y: 0, duration: 0.9, stagger: 0.12, ease: 'power3.out', delay: 0.2 }
     );
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-[#091625] py-28">
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#091625] py-24 md:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,111,165,0.16),transparent_36%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent_42%)]" />
+
       <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
         <div className="contact-item mx-auto max-w-4xl text-center">
           <div className="section-label text-center text-slate-light">Get In Touch</div>
-          <h2 className="font-display text-[clamp(3.5rem,7vw,5.8rem)] leading-[0.92] tracking-[-0.04em] text-white">
+          <h2 className="font-display text-[clamp(3.2rem,6.5vw,5.4rem)] leading-[0.94] tracking-[-0.04em] text-white">
             Contact Aspia
-            <span className="mt-3 block text-3xl font-light italic text-slate-light md:text-4xl">
-              Clear. Direct. Professional.
+            <span className="mt-3 block text-2xl font-light italic text-slate-light md:text-4xl">
+              Simple, direct, and professional
             </span>
           </h2>
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-light">
-            For quotations, partnership discussions, and urgent coordination, Aspia can be reached
-            through direct channels built for clear and professional business communication.
+          <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-slate-light">
+            Reach us through the channel that matches your need. The page is organized so visitors
+            can email, call, or verify our public presence without sorting through extra clutter.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <div className="contact-item border-t border-white/10 pt-8">
-            <div className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-light">
-              Business Contact Desk
-            </div>
-            <h3 className="mt-6 max-w-xl font-display text-4xl font-bold leading-tight text-white md:text-5xl">
-              Reach the right Aspia team with clarity.
-            </h3>
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-light md:text-lg">
-              The contact area is now arranged as a clean business desk, so visitors can quickly
-              understand where to write, when to call, and where to follow Aspia publicly.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link href={mailtoLink} className="btn-primary justify-center">
-                Open Email Draft
-              </Link>
-              <Link
-                href={telLink}
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.04] px-8 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-white transition-all duration-300 hover:border-steel-light hover:bg-white/[0.08]"
-              >
-                Call Now
-              </Link>
-            </div>
-
-            <div className="mt-10 border-y border-white/10">
-              {contactHighlights.map((item) => (
-                <div
-                  key={item.title}
-                  className="flex gap-4 border-b border-white/10 py-5 last:border-b-0"
-                >
-                  <span className="mt-2 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-steel-light" />
-                  <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
-                      {item.title}
-                    </h4>
-                    <p className="mt-2 max-w-xl text-sm leading-7 text-slate-light">
-                      {item.description}
-                    </p>
-                  </div>
+        <div className="mt-14 grid gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+          <div className="contact-item panel-dark overflow-hidden p-6 md:p-8">
+            <div className="flex flex-col gap-5 border-b border-white/10 pb-6 md:flex-row md:items-end md:justify-between">
+              <div>
+                <div className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-light/75">
+                  Primary Contact
                 </div>
+                <h3 className="mt-3 font-display text-3xl font-bold text-white md:text-4xl">
+                  Reach us directly
+                </h3>
+              </div>
+              <div className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-slate-light/80">
+                Business inquiries only
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-5 lg:grid-cols-2">
+              {primaryContacts.map((item) => (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  className="group rounded-[28px] border border-white/10 bg-white/[0.04] p-6 transition-all duration-300 hover:border-steel-light/50 hover:bg-white/[0.07]"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white">
+                      {item.icon}
+                    </div>
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-colors duration-300 group-hover:border-steel-light/60">
+                      <ArrowUpRightIcon />
+                    </span>
+                  </div>
+
+                  <div className="mt-6 text-xs font-semibold uppercase tracking-[0.26em] text-slate-light/70">
+                    {item.title}
+                  </div>
+                  <div className="mt-3 break-all text-2xl font-semibold text-white transition-colors duration-300 group-hover:text-steel-light">
+                    {item.value}
+                  </div>
+                  <p className="mt-4 text-sm leading-7 text-slate-light">
+                    {item.description}
+                  </p>
+                  <div className="mt-6 text-xs font-semibold uppercase tracking-[0.24em] text-slate-light/80">
+                    {item.actionLabel}
+                  </div>
+                </Link>
               ))}
             </div>
 
-            <div className="mt-8 border-t border-white/10 pt-6">
-              <div className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-light">
-                Communication Notes
-              </div>
-              <div className="mt-4 space-y-3">
-                {supportPoints.map((point) => (
-                  <div key={point} className="flex items-start gap-3">
-                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-steel" />
-                    <p className="text-sm leading-7 text-slate-light">{point}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-light">
+              Email is best for quotations and documentation. Call for urgent follow-up or quick coordination.
+            </p>
           </div>
 
-          <div className="contact-item border-t border-white/10 pt-8 lg:border-l lg:border-t-0 lg:pl-12">
-            <div>
-              <div className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-light">
-                Direct Contact
-              </div>
-              <h4 className="mt-3 text-2xl font-semibold text-white">Primary channels</h4>
-              <div className="mt-6 border-y border-white/10">
-                {contactDetails.map((item) => (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className="group flex flex-col gap-5 border-b border-white/10 py-6 last:border-b-0 sm:flex-row sm:items-start sm:justify-between"
-                  >
-                    <div className="flex min-w-0 items-start gap-4">
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.04]">
-                        {item.icon}
-                      </div>
-                      <div className="min-w-0">
-                        <div className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-light">
-                          {item.title}
-                        </div>
-                        <div className="mt-2 break-all text-xl font-semibold text-white transition-colors duration-300 group-hover:text-steel-light">
-                          {item.value}
-                        </div>
-                        <p className="mt-3 max-w-[34rem] text-sm leading-7 text-slate-light">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-slate-light/85">
-                      <span>{item.actionLabel}</span>
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 transition-colors duration-300 group-hover:border-steel-light/60">
-                        <ArrowUpRightIcon />
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+          <div className="contact-item panel-dark p-6 md:p-8">
+            <div className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-light/75">
+              Official Social Presence
             </div>
-
-            <div className="mt-12">
-              <div className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-light">
-                Official Social Presence
-              </div>
-              <h4 className="mt-3 text-2xl font-semibold text-white">Public channels</h4>
-              <div className="mt-6 border-y border-white/10">
-                {socialChannels.map((channel) => (
-                  <Link
-                    key={channel.title}
-                    href={channel.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group flex flex-col gap-5 border-b border-white/10 py-6 last:border-b-0 sm:flex-row sm:items-start sm:justify-between"
-                  >
-                    <div className="flex min-w-0 items-start gap-4">
-                      <div
-                        className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-white/10 ${channel.badgeClassName}`}
-                      >
-                        {channel.icon}
+            <h3 className="mt-3 font-display text-3xl font-bold text-white">
+              Public channels
+            </h3>
+            <div className="mt-6 space-y-4">
+              {socialChannels.map((channel) => (
+                <Link
+                  key={channel.title}
+                  href={channel.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group flex items-center justify-between gap-4 rounded-[22px] border border-white/10 bg-white/[0.04] px-5 py-4 transition-all duration-300 hover:border-steel-light/45 hover:bg-white/[0.07]"
+                >
+                  <div className="flex min-w-0 items-center gap-4">
+                    <div
+                      className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-white/10 ${channel.badgeClassName}`}
+                    >
+                      {channel.icon}
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-light/70">
+                        {channel.title}
                       </div>
-                      <div className="min-w-0">
-                        <div className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-light">
-                          {channel.title}
-                        </div>
-                        <div className="mt-2 break-all text-lg font-semibold text-white transition-colors duration-300 group-hover:text-steel-light">
-                          {channel.value}
-                        </div>
-                        <p className="mt-3 max-w-[34rem] text-sm leading-7 text-slate-light">
-                          {channel.description}
-                        </p>
+                      <div className="mt-1 break-all text-sm font-semibold text-white transition-colors duration-300 group-hover:text-steel-light">
+                        {channel.value}
                       </div>
                     </div>
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 transition-colors duration-300 group-hover:border-steel-light/60">
-                      <ArrowUpRightIcon />
-                    </span>
-                  </Link>
-                ))}
-              </div>
-
-              <p className="mt-6 text-sm leading-7 text-slate-light">
-                Use email for detailed commercial conversations, phone for urgent follow-up, and
-                social channels for public-facing company visibility.
-              </p>
+                  </div>
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 transition-colors duration-300 group-hover:border-steel-light/60">
+                    <ArrowUpRightIcon />
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
