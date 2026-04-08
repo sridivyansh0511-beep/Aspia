@@ -39,18 +39,42 @@ export default function CertificationsSection() {
   return (
     <section id="certifications" ref={sectionRef} className="bg-[#F3F6FA] py-28">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="mx-auto mb-16 max-w-4xl text-center">
-          <div className="section-label text-center">Quality Assurance</div>
-          <h2 className="section-title text-center">
-            Certifications
-            <span className="mt-3 block text-3xl font-light italic text-slate-light md:text-4xl">
-              Industry Recognition
-            </span>
-          </h2>
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate">
-            Our commitment to quality is backed by verified certifications that reinforce
-            dependable manufacturing, documented systems, and export-ready standards.
-          </p>
+        <div className="mb-16 grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+          <div className="cert-item panel-light overflow-hidden px-0 py-0">
+            <div className="grid sm:grid-cols-[0.95fr_1.05fr]">
+              <div className="relative min-h-[260px]">
+                <Image
+                  src="/facility/fume-hood-lab.png"
+                  alt="Aspia analytical safety laboratory"
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 28vw, 100vw"
+                />
+              </div>
+              <div className="flex flex-col justify-center px-6 py-7">
+                <div className="text-xs font-semibold uppercase tracking-[0.28em] text-steel">
+                  Compliance Environment
+                </div>
+                <p className="mt-4 text-sm leading-7 text-slate">
+                  Certified systems are strengthened by controlled laboratory spaces built for safe analysis and reliable process support.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mx-auto max-w-4xl text-center lg:mx-0 lg:max-w-none lg:text-left">
+            <div className="section-label lg:text-left">Quality Assurance</div>
+            <h2 className="section-title lg:text-left">
+              Certifications
+              <span className="mt-3 block text-3xl font-light italic text-slate-light md:text-4xl">
+                Industry Recognition
+              </span>
+            </h2>
+            <p className="mt-8 max-w-3xl text-lg leading-8 text-slate lg:mx-0">
+              Our commitment to quality is backed by verified certifications that reinforce
+              dependable manufacturing, documented systems, and export-ready standards.
+            </p>
+          </div>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-2">

@@ -2,6 +2,7 @@
 
 import { useDeferredValue, useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 import Link from 'next/link';
 import ProductVisual from '@/components/products/ProductVisual';
 import { PRODUCT_CATEGORIES, PRODUCTS } from '@/data/products';
@@ -124,17 +125,45 @@ export default function ProductsSection({ preview = false }) {
         </div>
 
         {preview && (
-          <div className="product-item mt-12 grid gap-5 md:grid-cols-3">
-            {[
-              ['27', 'Showcase-ready products'],
-              ['5', 'Searchable therapy categories'],
-              ['IP / BP / USP', 'Pharmacopoeia-led range'],
-            ].map(([value, label]) => (
-              <div key={label} className="panel-light px-6 py-7 text-center">
-                <div className="font-display text-4xl font-bold text-navy">{value}</div>
-                <div className="mt-3 text-xs uppercase tracking-[0.24em] text-slate">{label}</div>
+          <div className="product-item mt-12 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="panel-light overflow-hidden px-0 py-0">
+              <div className="grid md:grid-cols-[0.95fr_1.05fr]">
+                <div className="relative min-h-[280px]">
+                  <Image
+                    src="/facility/quality-lab.png"
+                    alt="Aspia quality laboratory"
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 30vw, 100vw"
+                  />
+                </div>
+                <div className="flex flex-col justify-center px-6 py-7">
+                  <div className="text-xs font-semibold uppercase tracking-[0.28em] text-steel">
+                    Quality Support
+                  </div>
+                  <h3 className="mt-4 font-display text-3xl font-bold leading-tight text-navy">
+                    Every product range is backed by lab-led discipline
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate">
+                    Our catalogue is supported by a facility environment focused on testing,
+                    validation, and dependable batch confidence.
+                  </p>
+                </div>
               </div>
-            ))}
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              {[
+                ['27', 'Showcase-ready products'],
+                ['5', 'Searchable therapy categories'],
+                ['IP / BP / USP', 'Pharmacopoeia-led range'],
+              ].map(([value, label]) => (
+                <div key={label} className="panel-light px-6 py-7 text-center">
+                  <div className="font-display text-4xl font-bold text-navy">{value}</div>
+                  <div className="mt-3 text-xs uppercase tracking-[0.24em] text-slate">{label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
 

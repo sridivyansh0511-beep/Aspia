@@ -20,8 +20,7 @@ export default function Footer() {
             </Link>
             <p className="mt-5 text-sm leading-7 text-slate-light">
               Precision-engineered industrial exports for critical sectors worldwide,
-              with a cleaner footer that keeps the focus on your content instead of repeating
-              the page navigation.
+              with a clean footer that keeps focus on what matters.
             </p>
           </div>
 

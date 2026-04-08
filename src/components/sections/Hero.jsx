@@ -31,8 +31,8 @@ export default function Hero() {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(10,22,40,0.94),rgba(10,22,40,0.72))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(74,111,165,0.35),transparent_40%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(10,22,40,0.78),rgba(10,22,40,0.48))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_36%),radial-gradient(circle_at_top,rgba(74,111,165,0.24),transparent_42%)]" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 lg:px-12">

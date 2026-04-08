@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const ABOUT_TEXT =
@@ -18,36 +19,6 @@ const VISION_TEXT =
 
 const OFFERINGS_TEXT =
   'ASPIA offers an impressive range of I.V. Fluids in FFS/BFS/Glass containers and also, irrigation solutions in 3000 ml.';
-
-const RANGE_OF_PARENTERALS = [
-  'Dextrose Injection I.P. / B.P. (5% / 10% / 25% / 50% w/v)',
-  'Sodium Chloride & Dextrose Injection I.P. 0.9% w/v',
-  'Sodium Chloride Injection I.P. 0.9% w/v',
-  'Compound Sodium Lactate Injection I.P. (Ringer Lactate Solution for Injection I.P.)',
-  'Multiple Electrolytes & Dextrose Injection (type - I / III / IV / V) I.P.',
-  'Sodium Chloride & Dextrose Injection I.P. (0.45% & 5% w/v)',
-  'Sodium Chloride & Dextrose Injection I.P. (0.33% & 5% w/v)',
-  'Sodium Chloride & Dextrose Injection I.P. (0.45% & 2.5% w/v)',
-  'Levofloxacin Infusion I.P.',
-  'Sodium Lactate Injection I.P. 1.85% w/v',
-  'Sodium Chloride & Dextrose Injection I.P. (0.9% & 10% w/v)',
-  "Ringer's Injection (Compound Sodium Chloride Injection I.P.)",
-  'Sodium Chloride Hypertonic Injection I.P. 1.6% w/v',
-  'Mannitol Injection I.P. 20%',
-  'Sodium Chloride Injection U.S.P. 3% w/v',
-  'Dextrose Injection I.P. 25% w/v',
-  'Paracetamol Infusion I.P. 1%',
-  'Ciprofloxacin Injection I.P.',
-  'Metronidazole Injection I.P.',
-  'Ofloxacin Injection I.P.',
-  'Fructose Injection I.P. (10% w/v)',
-  'Glycine Irrigation Solution I.P. (1.5% w/v)',
-  'Sodium Chloride Irrigation Solution I.P. 0.9% w/v',
-  'Invert Sugar Injection I.P.',
-  'Sodium Chloride Injection U.S.P. (0.45% w/v)',
-  'Fluconazole U.S.P. 200mg',
-  'Tinidazole Injection I.P.',
-];
 
 const HOME_HIGHLIGHTS = [
   {
@@ -69,6 +40,29 @@ const HOME_HIGHLIGHTS = [
     title: 'Offerings',
     description:
       'An impressive range of I.V. Fluids in FFS/BFS/Glass containers and irrigation solutions in 3000 ml.',
+  },
+];
+
+const FACILITY_IMAGES = [
+  {
+    src: '/facility/mixing-suite.jpeg',
+    title: 'Sterile Processing',
+    description: 'Advanced stainless-steel processing infrastructure built for consistency and control.',
+  },
+  {
+    src: '/facility/quality-lab.png',
+    title: 'Quality Laboratory',
+    description: 'A clean, organized testing environment that supports dependable validation.',
+  },
+  {
+    src: '/facility/clean-corridor.png',
+    title: 'Controlled Access',
+    description: 'Disciplined clean-room movement that reflects process integrity across production.',
+  },
+  {
+    src: '/facility/fume-hood-lab.png',
+    title: 'Analytical Safety',
+    description: 'Dedicated lab systems designed for precise handling and safe chemical analysis.',
   },
 ];
 
@@ -159,36 +153,55 @@ export default function AboutSection({ detailed = false }) {
             </div>
 
             <div className="about-item panel-light overflow-hidden px-0 py-0">
-              <div className="grid lg:grid-cols-[240px_1fr]">
-                <div className="bg-[linear-gradient(180deg,#1D8AD8,#1B63C9)] px-8 py-10 text-white">
-                  <div className="text-sm font-semibold uppercase tracking-[0.32em] text-white/75">
-                    Product Focus
+              <div className="grid lg:grid-cols-[1.1fr_0.9fr]">
+                <div className="relative min-h-[360px]">
+                  <Image
+                    src={FACILITY_IMAGES[0].src}
+                    alt={FACILITY_IMAGES[0].title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,32,0.06),rgba(7,18,32,0.76))]" />
+                  <div className="absolute inset-x-0 bottom-0 p-8 text-white">
+                    <div className="text-xs font-semibold uppercase tracking-[0.32em] text-white/70">
+                      Inside Aspia
+                    </div>
+                    <h3 className="mt-4 font-display text-4xl font-bold leading-tight">
+                      Modern manufacturing spaces built for trust
+                    </h3>
+                    <p className="mt-4 max-w-xl text-base leading-7 text-white/82">
+                      From sterile processing to laboratory validation, these spaces reflect the
+                      standards behind Aspia&apos;s quality promise.
+                    </p>
                   </div>
-                  <h3 className="mt-4 font-display text-4xl font-bold leading-tight">
-                    The Aspia Range of Parenterals
-                  </h3>
-                  <p className="mt-5 text-base leading-7 text-white/85">
-                    A brochure-led list of the formulations highlighted in your company material.
-                  </p>
                 </div>
 
-                <div className="px-8 py-10">
-                  <ol className="grid gap-4 text-sm leading-7 text-slate md:grid-cols-2">
-                    {RANGE_OF_PARENTERALS.map((item, index) => (
-                      <li key={item} className="flex gap-4 rounded-[20px] border border-slate/10 bg-white px-4 py-4">
-                        <span className="font-display text-xl font-bold text-steel">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ol>
+                <div className="grid gap-px bg-slate/10 md:grid-cols-2 lg:grid-cols-1">
+                  {FACILITY_IMAGES.slice(1).map((image) => (
+                    <article key={image.src} className="grid gap-0 bg-white sm:grid-cols-[180px_1fr]">
+                      <div className="relative min-h-[180px]">
+                        <Image
+                          src={image.src}
+                          alt={image.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="flex flex-col justify-center px-6 py-6">
+                        <div className="text-xs font-semibold uppercase tracking-[0.28em] text-steel">
+                          {image.title}
+                        </div>
+                        <p className="mt-3 text-sm leading-7 text-slate">{image.description}</p>
+                      </div>
+                    </article>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         ) : (
-          <div className="grid items-start gap-14 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="space-y-8">
+            <div className="grid items-start gap-14 lg:grid-cols-[1.1fr_0.9fr]">
             <div className="about-item">
               <div className="section-label">About Aspia</div>
               <h2 className="section-title max-w-3xl">
@@ -219,13 +232,112 @@ export default function AboutSection({ detailed = false }) {
               </div>
             </div>
 
-            <div className="about-item grid gap-5 sm:grid-cols-2">
-              {HOME_HIGHLIGHTS.map((item) => (
-                <article key={item.title} className="panel-light px-6 py-7">
-                  <h3 className="font-display text-3xl font-bold text-navy">{item.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-slate">{item.description}</p>
-                </article>
-              ))}
+              <div className="space-y-5">
+                <div className="about-item grid gap-5 sm:grid-cols-2">
+                {HOME_HIGHLIGHTS.map((item) => (
+                  <article key={item.title} className="panel-light px-6 py-7">
+                    <h3 className="font-display text-3xl font-bold text-navy">{item.title}</h3>
+                    <p className="mt-4 text-sm leading-7 text-slate">{item.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+
+            <div className="about-item panel-light overflow-hidden px-0 py-0">
+              <div className="grid gap-px bg-slate/10 xl:grid-cols-[0.72fr_1.28fr]">
+                <div className="grid bg-white lg:grid-rows-[auto_1fr]">
+                  <div className="px-6 py-7 md:px-7">
+                    <div className="text-xs font-semibold uppercase tracking-[0.28em] text-steel">
+                      Facility Highlight
+                    </div>
+                    <h3 className="mt-4 font-display text-3xl font-bold leading-tight text-navy">
+                      Infrastructure that reflects the Aspia standard
+                    </h3>
+                    <p className="mt-4 text-sm leading-7 text-slate">
+                      Our production spaces are built to support sterile handling, process discipline,
+                      and consistent quality from start to finish.
+                    </p>
+                    <div className="mt-6 grid gap-4">
+                      {[
+                        'Modern sterile processing setup',
+                        'Organized quality-driven workflow',
+                        'Clean manufacturing movement and control',
+                      ].map((item) => (
+                        <div key={item} className="rounded-[20px] border border-slate/10 bg-[#F7FAFC] px-4 py-4 text-sm leading-6 text-slate">
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="relative min-h-[320px] border-t border-slate/10">
+                    <Image
+                      src="/facility/clean-corridor.png"
+                      alt="Aspia controlled clean corridor"
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1280px) 24vw, (min-width: 768px) 40vw, 100vw"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,32,0.05),rgba(7,18,32,0.76))]" />
+                    <div className="absolute inset-x-0 bottom-0 p-6 text-white">
+                      <div className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/72">
+                        Controlled Environment
+                      </div>
+                      <p className="mt-3 max-w-sm text-sm leading-7 text-white/85">
+                        A clean-room workflow designed to support precision, safety, and dependable production.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid gap-px bg-slate/10 lg:grid-cols-[1.2fr_0.8fr]">
+                  <div className="relative min-h-[420px]">
+                    <Image
+                      src={FACILITY_IMAGES[0].src}
+                      alt={FACILITY_IMAGES[0].title}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1280px) 42vw, (min-width: 1024px) 50vw, 100vw"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,26,49,0.08),rgba(11,26,49,0.78))]" />
+                    <div className="absolute inset-x-0 bottom-0 p-6 text-white md:p-8">
+                      <div className="text-xs font-semibold uppercase tracking-[0.3em] text-white/72">
+                        Facility Showcase
+                      </div>
+                      <h3 className="mt-3 font-display text-3xl font-bold md:text-4xl">
+                        Clean, controlled, production-ready
+                      </h3>
+                      <p className="mt-4 max-w-2xl text-sm leading-7 text-white/84 md:text-base">
+                        From sterile processing to laboratory validation, Aspia&apos;s facility environment
+                        is designed to uphold trust, consistency, and export-ready quality.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="grid gap-px bg-slate/10">
+                    {FACILITY_IMAGES.slice(1, 3).map((image) => (
+                      <article key={image.src} className="grid bg-white">
+                        <div className="relative min-h-[210px]">
+                          <Image
+                            src={image.src}
+                            alt={image.title}
+                            fill
+                            className="object-cover"
+                            sizes="(min-width: 1280px) 18vw, (min-width: 1024px) 22vw, 100vw"
+                          />
+                        </div>
+                        <div className="px-5 py-5">
+                          <div className="text-xs font-semibold uppercase tracking-[0.26em] text-steel">
+                            {image.title}
+                          </div>
+                          <p className="mt-2 text-sm leading-6 text-slate">{image.description}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}
