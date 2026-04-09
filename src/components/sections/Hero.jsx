@@ -37,17 +37,26 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-20 lg:px-12">
         <div className="max-w-4xl">
-          <div className="hero-content mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.34em] text-slate-light/90">
+          <div
+            className="hero-content mb-6 inline-flex items-center rounded-full border border-white/15 bg-navy/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.34em] text-white"
+            style={{ textShadow: '0 1px 10px rgba(10, 22, 40, 0.45)' }}
+          >
             Your First-Line Choice For Water And Electrolytes Replacement Therapy
           </div>
-          <h1 className="hero-content font-display text-5xl font-bold leading-tight text-white md:text-6xl lg:text-7xl">
-            Care, Quality,
-            <span className="mt-3 block">Commitment</span>
-            <span className="mt-3 block text-3xl font-light text-slate-light md:text-4xl lg:text-5xl">
+          <h1
+            className="hero-content max-w-[12ch] font-display text-[clamp(3.4rem,8vw,6.8rem)] font-bold leading-[0.92] tracking-[-0.045em] text-white"
+            style={{ textShadow: '0 4px 24px rgba(10, 22, 40, 0.55)' }}
+          >
+            <span className="block">Care, Quality,</span>
+            <span className="mt-2 block">Commitment</span>
+            <span className="mt-4 block text-[clamp(1.9rem,4.5vw,4.2rem)] font-light tracking-[-0.02em] text-[#dbeafe]">
               in every single drop.
             </span>
           </h1>
-          <p className="hero-content mt-8 max-w-3xl text-lg leading-relaxed text-slate-light md:text-2xl">
+          <p
+            className="hero-content mt-8 max-w-3xl text-lg leading-relaxed text-white md:text-[1.55rem]"
+            style={{ textShadow: '0 2px 16px rgba(10, 22, 40, 0.45)' }}
+          >
             ASPIA Parenterals Pvt. Ltd. manufactures high-quality parenteral fluids in
             large volumes with modern production lines, automated technology, and a
             quality-first approach built for dependable healthcare supply.
@@ -80,7 +89,7 @@ export default function Hero() {
                 className="rounded-3xl border border-white/10 bg-white/[0.06] px-5 py-5 backdrop-blur-sm"
               >
                 <div className="font-display text-3xl font-bold text-white">{value}</div>
-                <div className="mt-2 text-sm leading-relaxed text-slate-light">{label}</div>
+                <div className="mt-2 text-sm leading-relaxed text-white/80">{label}</div>
               </div>
             ))}
           </div>

@@ -5,6 +5,7 @@ import { gsap } from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProductVisual from '@/components/products/ProductVisual';
+import BorderGlow from '@/components/ui/BorderGlow';
 import { PRODUCT_CATEGORIES, PRODUCTS } from '@/data/products';
 
 const TONE_ACCENTS = {
@@ -168,85 +169,99 @@ export default function ProductsSection({ preview = false }) {
         )}
 
         {!preview && (
-          <div className="product-item relative z-10 -mt-8 panel-light overflow-hidden bg-[linear-gradient(160deg,#FFFFFF,#EEF4FA)] p-7 shadow-[0_28px_70px_rgba(15,23,42,0.08)] sm:p-8">
-            <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-xl">
-                <div className="text-xs font-semibold uppercase tracking-[0.3em] text-steel">
-                  Smart Product Search
-                </div>
-                <h3 className="mt-4 font-display text-4xl font-bold leading-[0.95] tracking-[-0.03em] text-navy">
-                  Find the right formulation faster
-                </h3>
-                <p className="mt-4 text-base leading-7 text-slate">
-                  Search by molecule, strength, therapy type, irrigation use, saline blend, or pharmacopoeia reference.
-                </p>
-              </div>
-
-              <div className="w-full lg:max-w-xl">
-                <div className="relative">
-                  <svg
-                    className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-slate"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="m21 21-4.35-4.35M17 10.5A6.5 6.5 0 1 1 4 10.5a6.5 6.5 0 0 1 13 0Z" />
-                  </svg>
-                  <input
-                    type="text"
-                    value={query}
-                    onChange={(event) => setQuery(event.target.value)}
-                    placeholder="Search dextrose, levofloxacin, irrigation, 0.9%, U.S.P..."
-                    className="w-full rounded-full border border-slate/10 bg-white px-14 py-4 text-sm text-navy shadow-[0_14px_30px_rgba(15,23,42,0.04)] outline-none transition-all duration-300 placeholder:text-slate-light focus:border-steel-light focus:shadow-[0_18px_36px_rgba(44,74,110,0.12)]"
-                  />
-                </div>
-
-                {(query || activeCategory !== 'All') && (
-                  <div className="mt-4 flex justify-end">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setQuery('');
-                        setActiveCategory('All');
-                      }}
-                      className="text-xs font-semibold uppercase tracking-[0.24em] text-steel transition-colors hover:text-navy"
-                    >
-                      Clear Search
-                    </button>
+          <BorderGlow
+            className="product-item relative z-10 -mt-8"
+            backgroundColor="#ffffff"
+            borderRadius={32}
+            glowRadius={26}
+            glowColor="205 74 78"
+            glowIntensity={0.8}
+            edgeSensitivity={34}
+            coneSpread={22}
+            animated
+            fillOpacity={0.3}
+            colors={['#428CC6', '#2F9E98', '#D59A49']}
+          >
+            <div className="relative rounded-[32px] bg-[linear-gradient(160deg,#FFFFFF,#EEF4FA)] p-7 sm:p-8">
+              <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+                <div className="max-w-xl">
+                  <div className="text-xs font-semibold uppercase tracking-[0.3em] text-steel">
+                    Smart Product Search
                   </div>
-                )}
+                  <h3 className="mt-4 font-display text-4xl font-bold leading-[0.95] tracking-[-0.03em] text-navy">
+                    Find the right formulation faster
+                  </h3>
+                  <p className="mt-4 text-base leading-7 text-slate">
+                    Search by molecule, strength, therapy type, irrigation use, saline blend, or pharmacopoeia reference.
+                  </p>
+                </div>
+
+                <div className="w-full lg:max-w-xl">
+                  <div className="relative">
+                    <svg
+                      className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-slate"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="m21 21-4.35-4.35M17 10.5A6.5 6.5 0 1 1 4 10.5a6.5 6.5 0 0 1 13 0Z" />
+                    </svg>
+                    <input
+                      type="text"
+                      value={query}
+                      onChange={(event) => setQuery(event.target.value)}
+                      placeholder="Search dextrose, levofloxacin, irrigation, 0.9%, U.S.P..."
+                      className="w-full rounded-full border border-slate/10 bg-white px-14 py-4 text-sm text-navy shadow-[0_14px_30px_rgba(15,23,42,0.04)] outline-none transition-all duration-300 placeholder:text-slate-light focus:border-steel-light focus:shadow-[0_18px_36px_rgba(44,74,110,0.12)]"
+                    />
+                  </div>
+
+                  {(query || activeCategory !== 'All') && (
+                    <div className="mt-4 flex justify-end">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setQuery('');
+                          setActiveCategory('All');
+                        }}
+                        className="text-xs font-semibold uppercase tracking-[0.24em] text-steel transition-colors hover:text-navy"
+                      >
+                        Clear Search
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                {PRODUCT_CATEGORIES.map((category) => {
+                  const isActive = activeCategory === category;
+
+                  return (
+                    <button
+                      key={category}
+                      type="button"
+                      onClick={() => setActiveCategory(category)}
+                      className={`inline-flex items-center gap-3 rounded-full border px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
+                        isActive
+                          ? 'border-steel-light bg-steel text-white shadow-[0_14px_30px_rgba(44,74,110,0.16)]'
+                          : 'border-slate/10 bg-white text-slate hover:border-steel-light/40 hover:text-navy'
+                      }`}
+                    >
+                      <span>{category}</span>
+                      <span className={`rounded-full px-2 py-1 text-[10px] ${isActive ? 'bg-white/15 text-white' : 'bg-slate/[0.08] text-slate'}`}>
+                        {getCategoryCount(category)}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="mt-8 flex flex-col gap-3 border-t border-slate/[0.08] pt-6 text-xs font-semibold uppercase tracking-[0.24em] text-slate sm:flex-row sm:items-center sm:justify-between">
+                <span>{filteredProducts.length} of {PRODUCTS.length} products shown</span>
+                <span>{activeCategory === 'All' ? 'Entire product catalogue' : activeCategory}</span>
               </div>
             </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              {PRODUCT_CATEGORIES.map((category) => {
-                const isActive = activeCategory === category;
-
-                return (
-                  <button
-                    key={category}
-                    type="button"
-                    onClick={() => setActiveCategory(category)}
-                    className={`inline-flex items-center gap-3 rounded-full border px-4 py-3 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-300 ${
-                      isActive
-                        ? 'border-steel-light bg-steel text-white shadow-[0_14px_30px_rgba(44,74,110,0.16)]'
-                        : 'border-slate/10 bg-white text-slate hover:border-steel-light/40 hover:text-navy'
-                    }`}
-                  >
-                    <span>{category}</span>
-                    <span className={`rounded-full px-2 py-1 text-[10px] ${isActive ? 'bg-white/15 text-white' : 'bg-slate/[0.08] text-slate'}`}>
-                      {getCategoryCount(category)}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="mt-8 flex flex-col gap-3 border-t border-slate/[0.08] pt-6 text-xs font-semibold uppercase tracking-[0.24em] text-slate sm:flex-row sm:items-center sm:justify-between">
-              <span>{filteredProducts.length} of {PRODUCTS.length} products shown</span>
-              <span>{activeCategory === 'All' ? 'Entire product catalogue' : activeCategory}</span>
-            </div>
-          </div>
+          </BorderGlow>
         )}
 
         {!preview && (
