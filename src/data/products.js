@@ -14,6 +14,7 @@ export const PRODUCTS = [
   {
     id: "02",
     category: "IV Nutrition",
+    image: "/PHOTO-2026-04-19-12-27-54.jpg",
     visual: "bag",
     tone: "aqua",
     strength: "0.9% w/v",
@@ -24,7 +25,7 @@ export const PRODUCTS = [
   {
     id: "03",
     category: "Electrolyte Balance",
-    image: "/nacl.jpeg",
+    image: "/PHOTO-2026-03-31-19-44-06.jpg",
     visual: "bottle",
     tone: "blue",
     strength: "0.9% w/v",
@@ -36,6 +37,7 @@ export const PRODUCTS = [
     id: "04",
     featured: true,
     category: "Electrolyte Balance",
+    image: "/PHOTO-2026-04-19-12-26-40.jpg",
     visual: "vial",
     tone: "amber",
     strength: "Ringer Lactate",
@@ -46,6 +48,7 @@ export const PRODUCTS = [
   {
     id: "05",
     category: "Electrolyte Balance",
+    image: "/PHOTO-2026-04-11-00-50-15.jpg",
     visual: "bag",
     tone: "emerald",
     strength: "Type I / III / IV / V",
@@ -56,6 +59,7 @@ export const PRODUCTS = [
   {
     id: "06",
     category: "IV Nutrition",
+    image: "/PHOTO-2026-04-19-12-26-59.jpg",
     visual: "bag",
     tone: "aqua",
     strength: "0.45% & 5% w/v",
@@ -66,6 +70,7 @@ export const PRODUCTS = [
   {
     id: "07",
     category: "IV Nutrition",
+    image: "/PHOTO-2026-03-31-22-24-03.jpg",
     visual: "bag",
     tone: "emerald",
     strength: "0.33% & 5% w/v",
@@ -76,6 +81,7 @@ export const PRODUCTS = [
   {
     id: "08",
     category: "IV Nutrition",
+    image: "/PHOTO-2026-03-31-22-25-01.jpg",
     visual: "bottle",
     tone: "amber",
     strength: "0.45% & 2.5% w/v",
@@ -87,6 +93,7 @@ export const PRODUCTS = [
     id: "09",
     featured: true,
     category: "Therapeutic Infusions",
+    image: "/PHOTO-2026-03-31-22-27-15.jpg",
     visual: "bottle",
     tone: "blue",
     strength: "I.P.",
@@ -97,6 +104,7 @@ export const PRODUCTS = [
   {
     id: "10",
     category: "Electrolyte Balance",
+    image: "/PHOTO-2026-04-19-12-29-19.jpg",
     visual: "bottle",
     tone: "blue",
     strength: "1.85% w/v",
@@ -107,6 +115,7 @@ export const PRODUCTS = [
   {
     id: "11",
     category: "IV Nutrition",
+    image: "/PHOTO-2026-04-19-12-28-59.jpg",
     visual: "bottle",
     tone: "blue",
     strength: "0.9% & 10% w/v",
@@ -117,6 +126,7 @@ export const PRODUCTS = [
   {
     id: "12",
     category: "Electrolyte Balance",
+    image: "/PHOTO-2026-04-19-12-28-32.jpg",
     visual: "vial",
     tone: "silver",
     strength: "Ringer's Injection",
@@ -127,6 +137,7 @@ export const PRODUCTS = [
   {
     id: "13",
     category: "Electrolyte Balance",
+    image: "/PHOTO-2026-04-19-12-25-57.jpg",
     visual: "bottle",
     tone: "blue",
     strength: "1.6% w/v",
@@ -159,6 +170,7 @@ export const PRODUCTS = [
   {
     id: "16",
     category: "IV Nutrition",
+    image: "/PHOTO-2026-03-31-22-49-16.jpg",
     visual: "bottle",
     tone: "blue",
     strength: "25% w/v",
@@ -237,6 +249,7 @@ export const PRODUCTS = [
   {
     id: "23",
     category: "Irrigation Solutions",
+    image: "/PHOTO-2026-03-31-22-50-49.jpg",
     visual: "bottle",
     tone: "blue",
     strength: "0.9% w/v",
@@ -258,6 +271,7 @@ export const PRODUCTS = [
   {
     id: "25",
     category: "Electrolyte Balance",
+    image: "/PHOTO-2026-03-31-22-52-06.jpg",
     visual: "bottle",
     tone: "amber",
     strength: "0.45% w/v",
