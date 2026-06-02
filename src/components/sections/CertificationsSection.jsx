@@ -65,9 +65,9 @@ export default function CertificationsSection() {
           <div className="mx-auto max-w-4xl text-center lg:mx-0 lg:max-w-none lg:text-left">
             <div className="section-label lg:text-left">Quality Assurance</div>
             <h2 className="section-title lg:text-left">
-              Certifications
-              <span className="mt-3 block text-3xl font-light italic text-slate-light md:text-4xl">
-                Industry Recognition
+              Certified Quality Systems
+              <span className="heading-subtitle">
+                Standards that support dependable manufacturing and supply.
               </span>
             </h2>
             <p className="mt-8 max-w-3xl text-lg leading-8 text-slate lg:mx-0">

@@ -93,8 +93,8 @@ export default function AboutSection({ detailed = false }) {
                 <div className="section-label">About Aspia</div>
                 <h2 className="section-title max-w-3xl">
                   Water and Electrolytes
-                  <span className="mt-3 block text-3xl font-light italic text-slate-light md:text-4xl">
-                    Replacement Therapy
+                  <span className="heading-subtitle">
+                    Replacement therapy backed by disciplined sterile manufacturing.
                   </span>
                 </h2>
                 <p className="mt-8 max-w-3xl text-lg leading-8 text-slate">{ABOUT_TEXT}</p>
@@ -206,8 +206,8 @@ export default function AboutSection({ detailed = false }) {
               <div className="section-label">About Aspia</div>
               <h2 className="section-title max-w-3xl">
                 Parenteral with a Promise
-                <span className="mt-3 block text-3xl font-light italic text-slate-light md:text-4xl">
-                  Care, Quality, Commitment
+                <span className="heading-subtitle">
+                  Care, quality, and commitment behind every production run.
                 </span>
               </h2>
               <p className="mt-8 max-w-2xl text-lg leading-8 text-slate">{ABOUT_TEXT}</p>

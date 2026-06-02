@@ -6,12 +6,14 @@ module.exports = {
       colors: {
         navy:  { DEFAULT: '#0A1628', 700: '#0D1E38', 500: '#1A3358' },
         steel: { DEFAULT: '#2C4A6E', light: '#4A6FA5' },
-        slate: { DEFAULT: '#8B9DB5', light: '#C5D0DC' },
+        slate: { DEFAULT: '#586B82', light: '#D8E2EC' },
         cream: '#F8F9FB',
       },
       fontFamily: {
-        sans:    ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Playfair Display', 'Georgia', 'serif'],
+        sans:     ['var(--font-body)'],
+        display:  ['var(--font-body)'],
+        heading:  ['Balhattan', 'Nasional Sans UltraLight', 'sans-serif'],
+        nasional: ['Nasional Sans UltraLight', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.8s ease forwards',

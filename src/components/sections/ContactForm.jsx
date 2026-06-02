@@ -169,14 +169,15 @@ export default function ContactForm() {
           <div className="grid lg:grid-cols-[1.06fr_0.94fr]">
             <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
               <div className="section-label mb-0">Contact Aspia</div>
-              <h1 className="mt-4 max-w-3xl font-display text-[clamp(3rem,6vw,5.5rem)] leading-[0.92] tracking-[-0.045em] text-navy">
-                A cleaner way
-                <span className="mt-2 block text-steel">to start the conversation.</span>
+              <h1 className="heading-display mt-4 max-w-3xl text-[clamp(3.05rem,6.4vw,5.7rem)] leading-[0.9] text-navy">
+                Start the right conversation
+                <span className="heading-subtitle text-steel">
+                  Email, call, or verify official Aspia channels.
+                </span>
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-slate md:text-lg">
-                This page is built around intent first: formal business communication, urgent coordination,
-                and public verification each have their own space so visitors can act quickly without
-                hunting through clutter.
+                Reach the right contact route for product inquiries, documentation requests,
+                urgent coordination, and official social updates.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -221,17 +222,17 @@ export default function ContactForm() {
 
               <div className="absolute inset-x-0 top-0 p-6 md:p-8">
                 <div className="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/84 backdrop-blur-md">
-                  Structured for action
+                  Business Inquiry Desk
                 </div>
               </div>
 
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
                 <div className="max-w-xl rounded-[28px] border border-white/12 bg-white/10 p-6 text-white backdrop-blur-md">
                   <div className="text-xs font-semibold uppercase tracking-[0.28em] text-white/70">
-                    How to use this page
+                    Inquiry Guidance
                   </div>
                   <h2 className="mt-3 font-display text-3xl font-bold leading-tight">
-                    Choose the channel that matches the job
+                    Choose the channel that matches your inquiry
                   </h2>
                   <div className="mt-5 space-y-3">
                     {processNotes.map((note) => (
@@ -270,11 +271,11 @@ export default function ContactForm() {
                       Direct Channels
                     </div>
                     <h2 className="mt-3 font-display text-3xl font-bold text-white md:text-4xl">
-                      Contact without friction
+                      Direct contact channels
                     </h2>
                   </div>
                   <div className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-light/80">
-                    Clear actions, fewer decisions
+                    Quick routing
                   </div>
                 </div>
 
@@ -338,14 +339,14 @@ export default function ContactForm() {
           <div className="contact-item space-y-8">
             <div className="panel-dark p-6 md:p-8 lg:p-9">
               <div className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-light/74">
-                Communication Notes
+                Response Notes
               </div>
               <h2 className="mt-3 font-display text-3xl font-bold text-white">
-                A page that tells visitors what to do next
+                Get a faster response
               </h2>
               <p className="mt-5 text-sm leading-7 text-slate-light">
-                The new structure separates contact actions from context. It helps visitors move faster
-                by showing the right route for quotations, urgent follow-up, and public profile checks.
+                Clear details help the team route your inquiry quickly and respond with the right
+                documents, quotation context, or follow-up.
               </p>
 
               <div className="mt-6 space-y-4">

@@ -131,7 +131,7 @@ function WorldMap({ countries, selectedMarketId, onSelectMarket, onShowTooltip, 
           <div className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-light/65">
             Asia Focused View
           </div>
-          <div className="mt-2 font-display text-3xl font-bold text-white">Export Markets Across Asia</div>
+          <div className="mt-2 font-display text-3xl font-bold text-white">Regional Export Reach</div>
         </div>
         <div className="max-w-md text-sm leading-6 text-slate-light/75">
           A tighter Gulf-to-South Asia map with cleaner spacing, clearer callouts, and every export market visible at a glance.
@@ -301,14 +301,14 @@ export default function D3ExportMap() {
     <section id="export-map" ref={sectionRef} className="bg-[#091625] py-28 md:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="map-item">
-          <h2 className="max-w-6xl font-display text-[clamp(4rem,8vw,6.5rem)] leading-[0.9] tracking-[-0.04em] text-white">
-            Our Export Markets
+          <h2 className="heading-display max-w-6xl text-[clamp(3.6rem,7.3vw,6.5rem)] leading-[0.9] text-white">
+            Export Markets Across Asia
           </h2>
         </div>
 
         <div className="map-item mx-auto mt-24 max-w-5xl text-center">
           <p className="text-xl leading-relaxed text-slate-light md:text-[2rem] md:leading-relaxed">
-            An Asia-only export map showing India, Bangladesh, Nepal, Sri Lanka, and the Gulf markets in a cleaner, easier-to-scan layout.
+            A focused view of India, Bangladesh, Nepal, Sri Lanka, and Gulf markets where Aspia is building its supply presence.
           </p>
         </div>
 

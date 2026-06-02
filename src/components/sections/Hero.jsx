@@ -41,15 +41,15 @@ export default function Hero() {
             className="hero-content mb-6 inline-flex items-center rounded-full border border-white/15 bg-navy/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.34em] text-white"
             style={{ textShadow: '0 1px 10px rgba(10, 22, 40, 0.45)' }}
           >
-            Your First-Line Choice For Water And Electrolytes Replacement Therapy
+            Sterile IV Fluid Manufacturing
           </div>
           <h1
-            className="hero-content max-w-[12ch] font-display text-[clamp(3.4rem,8vw,6.8rem)] font-bold leading-[0.92] tracking-[-0.045em] text-white"
+            className="hero-content heading-display max-w-[13ch] text-[clamp(3.35rem,8.2vw,7.1rem)] leading-[0.88] text-white"
             style={{ textShadow: '0 4px 24px rgba(10, 22, 40, 0.55)' }}
           >
             <span className="block">Care, Quality,</span>
             <span className="mt-2 block">Commitment</span>
-            <span className="mt-4 block text-[clamp(1.9rem,4.5vw,4.2rem)] font-light tracking-[-0.02em] text-[#dbeafe]">
+            <span className="mt-5 block font-sans text-[clamp(1.35rem,3vw,2rem)] font-medium leading-tight tracking-normal text-[#dbeafe]">
               in every single drop.
             </span>
           </h1>

@@ -4,6 +4,7 @@ import { useDeferredValue, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import Link from 'next/link';
 import ProductVisual from '@/components/products/ProductVisual';
+import ScrollFloat from '@/components/ui/ScrollFloat';
 import { PRODUCT_CATEGORIES, PRODUCTS } from '@/data/products';
 
 const TONE_ACCENTS = {
@@ -102,14 +103,21 @@ function PreviewCatalogue({ featuredProducts }) {
     <>
       <div className="product-item mx-auto max-w-4xl text-center">
         <div className="section-label">Pharmaceutical Product Range</div>
-        <h2 className="section-title">
-          Featured Products At A Glance
-          <span className="mt-3 block text-3xl font-light italic text-slate md:text-4xl">
-            Clean preview cards instead of click-to-switch slides
-          </span>
-        </h2>
+        <ScrollFloat
+          containerClassName="section-title"
+          animationDuration={1.1}
+          ease="back.inOut(2)"
+          scrollStart="top bottom-=12%"
+          scrollEnd="center center+=12%"
+          stagger={0.025}
+        >
+          Essential IV Fluids, Clearly Presented
+        </ScrollFloat>
+        <p className="heading-subtitle">
+          Explore a focused parenteral range built for dependable healthcare supply.
+        </p>
         <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate">
-          A quick look at the range. The full products page now opens as one long scrolling catalogue with all products already visible on the page.
+          A quick view of key formulations with clear strengths, categories, and use-focused product context.
         </p>
       </div>
 
@@ -142,14 +150,14 @@ function FullCatalogue({ groupedProducts, query, setQuery, filteredProducts }) {
           <div className="max-w-4xl">
             <div className="section-label text-slate-light">Full Product Catalogue</div>
             <h2 className="section-title text-white">
-              Every Product On The Page
-              <span className="mt-3 block text-3xl font-light italic text-slate-light md:text-4xl">
-                Scroll the catalogue instead of opening one product at a time
+              Complete Product Catalogue
+              <span className="heading-subtitle-light">
+                Search and scan by molecule, strength, or category.
               </span>
             </h2>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-light">
-              All products are listed below in category sections on one continuous page. No spotlight deck, no product clicks required just to reveal the catalogue.
+              Products are grouped into practical sections so buyers and partners can compare the range without extra steps.
             </p>
           </div>
 
@@ -174,13 +182,13 @@ function FullCatalogue({ groupedProducts, query, setQuery, filteredProducts }) {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <div className="text-xs font-semibold uppercase tracking-[0.3em] text-steel">
-              Optional Search
+              Product Finder
             </div>
             <h3 className="mt-4 font-display text-4xl font-bold leading-[0.95] tracking-[-0.03em] text-navy">
-              Everything is already visible
+              Find the right formulation faster
             </h3>
             <p className="mt-4 text-base leading-7 text-slate">
-              Use search only if you want to narrow the long page. Leave it empty to keep the full catalogue visible while you scroll.
+              Filter by product name, strength, category, or tag while keeping the catalogue easy to browse.
             </p>
           </div>
 
@@ -220,13 +228,13 @@ function FullCatalogue({ groupedProducts, query, setQuery, filteredProducts }) {
 
         <div className="mt-8 flex flex-col gap-3 border-t border-slate/[0.08] pt-6 text-xs font-semibold uppercase tracking-[0.24em] text-slate sm:flex-row sm:items-center sm:justify-between">
           <span>{filteredProducts.length} of {PRODUCTS.length} products visible</span>
-          <span>{query ? 'Filtered catalogue view' : 'Full scroll catalogue view'}</span>
+          <span>{query ? 'Filtered results' : 'Complete catalogue'}</span>
         </div>
       </div>
 
       {filteredProducts.length === 0 ? (
         <div className="product-item panel-light mt-10 px-8 py-12 text-center">
-          <div className="font-display text-3xl font-bold text-navy">No products matched your search</div>
+          <div className="font-display text-3xl font-bold text-navy">No matching products</div>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate">
             Try another molecule name, concentration, or category term to bring products back into the scroll view.
           </p>

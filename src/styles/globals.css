@@ -1,9 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.cdnfonts.com/css/balhattan');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html { scroll-behavior: smooth; }
+
+:root {
+  --font-body: Aptos, Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-heading: 'Balhattan', 'Nasional Sans UltraLight', sans-serif;
+}
+
+@font-face {
+  font-family: 'Nasional Sans UltraLight';
+  src:
+    local('Nasional Sans UltraLight'),
+    url('/fonts/nasional-sans-ultralight.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Balhattan', 'Nasional Sans UltraLight', sans-serif !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.035em;
+    text-wrap: balance;
+  }
+}
 
 @keyframes splashLogoFade {
   from {
@@ -36,6 +65,9 @@ html { scroll-behavior: smooth; }
 
 body {
   @apply bg-cream text-navy font-sans antialiased;
+  font-weight: 400;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
 }
 
 body::selection {
@@ -43,6 +75,29 @@ body::selection {
 }
 
 .reveal { opacity: 0; }
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    transition-delay: 0ms;
+    will-change: auto;
+  }
+}
 
 @layer components {
   .btn-primary {
@@ -60,8 +115,21 @@ body::selection {
   .section-label {
     @apply mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-steel;
   }
+  .heading-display {
+    @apply font-normal uppercase tracking-[0.045em];
+    font-family: var(--font-heading);
+    text-wrap: balance;
+  }
+  .heading-subtitle {
+    @apply mt-4 block font-sans text-[clamp(1.15rem,2.5vw,1.55rem)] font-normal normal-case leading-8 tracking-normal text-slate;
+  }
+  .heading-subtitle-light {
+    @apply mt-4 block font-sans text-[clamp(1.15rem,2.5vw,1.55rem)] font-normal normal-case leading-8 tracking-normal text-slate-light;
+  }
   .section-title {
-    @apply font-display text-5xl font-bold leading-[0.95] tracking-[-0.03em] text-navy md:text-6xl;
+    @apply text-[clamp(3.25rem,6.4vw,5.75rem)] font-normal uppercase leading-[0.92] tracking-[0.045em] text-navy;
+    font-family: var(--font-heading);
+    text-wrap: balance;
   }
   .panel-light {
     @apply rounded-[24px] border border-slate/10 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.06)];
