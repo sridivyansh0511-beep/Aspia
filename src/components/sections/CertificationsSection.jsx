@@ -1,21 +1,14 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
+import { useStaggerReveal } from '@/lib/gsapUtils';
 
 export default function CertificationsSection() {
   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const tl = gsap.timeline({ delay: 0.5 });
-    
-    tl.fromTo(
-      sectionRef.current.querySelectorAll('.cert-item'),
-      { opacity: 0, y: 60 },
-      { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: 'power3.out' }
-    );
-  }, []);
+  useStaggerReveal(sectionRef, '.cert-item', { delay: 0.5 });
 
   const certifications = [
     {
@@ -79,7 +72,7 @@ export default function CertificationsSection() {
 
         <div className="grid gap-8 lg:grid-cols-2">
           {certifications.map((cert, index) => (
-            <div key={index} className="cert-item">
+            <div key={cert.name} className="cert-item">
               <div className="panel-light h-full overflow-hidden">
                 <div className={`bg-gradient-to-br ${cert.accent} px-6 py-6 md:px-8 md:py-8`}>
                   <div className="mb-5 flex items-center justify-between gap-4">

@@ -2,17 +2,28 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
+import { useStaggerReveal } from '@/lib/gsapUtils';
 
-const emailAddress = 'aspiaparenterapvtltd7380@gmail.com';
-const phoneNumber = '+919517186565';
-const xHandle = '@AspiaLtd';
-const instagramHandle = 'ASPIAPARENTERALS';
-const mailtoLink = `mailto:${emailAddress}?subject=Business%20Inquiry%20for%20Aspia`;
-const telLink = 'tel:+919517186565';
-const xLink = 'https://x.com/AspiaLtd';
-const instagramLink = 'https://www.instagram.com/aspiaparenterals/';
+const CONTACT_CONFIG = {
+  email: 'aspiaparenterapvtltd7380@gmail.com',
+  phone: '+919517186565',
+  xHandle: '@AspiaLtd',
+  instagram: 'ASPIAPARENTERALS',
+  links: {
+    mailto: 'mailto:aspiaparenterapvtltd7380@gmail.com?subject=Business%20Inquiry%20for%20Aspia',
+    tel: 'tel:+919517186565',
+    x: 'https://x.com/AspiaLtd',
+    instagram: 'https://www.instagram.com/aspiaparenterals/'
+  }
+};
+
+const { email: emailAddress, phone: phoneNumber, xHandle, instagram: instagramHandle } = CONTACT_CONFIG;
+const mailtoLink = CONTACT_CONFIG.links.mailto;
+const telLink = CONTACT_CONFIG.links.tel;
+const xLink = CONTACT_CONFIG.links.x;
+const instagramLink = CONTACT_CONFIG.links.instagram;
 
 function MailIcon() {
   return (
@@ -112,22 +123,11 @@ const socialChannels = [
   },
 ];
 
-export default function ContactForm() {
+export default function ContactForm({ headingLevel = 'h2' }) {
   const sectionRef = useRef(null);
+  const Heading = headingLevel;
 
-  useEffect(() => {
-    const items = sectionRef.current?.querySelectorAll('.contact-item');
-
-    if (!items?.length) {
-      return;
-    }
-
-    gsap.fromTo(
-      items,
-      { opacity: 0, y: 34 },
-      { opacity: 1, y: 0, duration: 0.8, stagger: 0.08, ease: 'power3.out', delay: 0.12 }
-    );
-  }, []);
+  useStaggerReveal(sectionRef, '.contact-item', { delay: 0.12, y: 34, duration: 0.8, stagger: 0.08 });
 
   return (
     <section
@@ -141,12 +141,12 @@ export default function ContactForm() {
         <div className="grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr]">
           <div className="contact-item">
             <div className="section-label mb-0">Contact Aspia</div>
-            <h1 className="heading-display mt-4 max-w-3xl text-[clamp(3.15rem,6.8vw,6rem)] leading-[0.88] text-navy">
+            <Heading className="heading-display mt-4 max-w-3xl text-[clamp(3.15rem,6.8vw,6rem)] leading-[0.88] text-navy">
               Simple ways to reach us
               <span className="heading-subtitle text-steel">
                 Product, quotation, and document inquiries.
               </span>
-            </h1>
+            </Heading>
             <p className="mt-6 max-w-xl text-base leading-8 text-slate md:text-lg">
               Email for formal requests. Call when the matter needs quick coordination.
             </p>

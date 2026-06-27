@@ -2,11 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { useStaggerReveal } from '@/lib/gsapUtils';
 import * as d3 from 'd3';
 import { feature } from 'topojson-client';
 import fallbackWorldData from '@/data/world-110m.json';
 
-const WORLD_ATLAS_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+const WORLD_ATLAS_URL = '/world-110m-hd.json';
 
 const MAP_STYLES = {
   ocean: '#0A182A',
@@ -138,7 +139,7 @@ function WorldMap({ countries, selectedMarketId, onSelectMarket, onShowTooltip, 
         </div>
       </div>
 
-      <svg viewBox={`0 0 ${width} ${height}`} className="h-auto w-full rounded-[24px] border border-white/8 bg-[#091321]">
+      <svg viewBox={`0 0 ${width} ${height}`} className="h-auto w-full rounded-[24px] border border-white/10 bg-[#091321]">
         <defs>
           <radialGradient id="export-map-glow" cx="50%" cy="34%" r="70%">
             <stop offset="0%" stopColor="rgba(88,174,255,0.18)" />
@@ -234,16 +235,10 @@ export default function D3ExportMap() {
   const [tooltip, setTooltip] = useState(null);
   const [worldData, setWorldData] = useState(null);
   const [isFallbackData, setIsFallbackData] = useState(false);
+  const [fetchError, setFetchError] = useState(null);
   const [selectedMarketId, setSelectedMarketId] = useState('356');
 
-  useEffect(() => {
-    const tl = gsap.timeline({ delay: 0.2 });
-    tl.fromTo(
-      sectionRef.current.querySelectorAll('.map-item'),
-      { opacity: 0, y: 36 },
-      { opacity: 1, y: 0, duration: 0.9, stagger: 0.1, ease: 'power3.out' }
-    );
-  }, []);
+  useStaggerReveal(sectionRef, '.map-item', { delay: 0.2, y: 36, duration: 0.9, stagger: 0.1 });
 
   useEffect(() => {
     let cancelled = false;
@@ -262,8 +257,13 @@ export default function D3ExportMap() {
       } catch (error) {
         console.error('Falling back to bundled map data:', error);
         if (!cancelled) {
-          setWorldData(fallbackWorldData);
-          setIsFallbackData(true);
+          try {
+            if (!fallbackWorldData) throw new Error('No fallback data');
+            setWorldData(fallbackWorldData);
+            setIsFallbackData(true);
+          } catch (fallbackError) {
+            setFetchError(error);
+          }
         }
       }
     }
@@ -313,7 +313,15 @@ export default function D3ExportMap() {
         </div>
 
         <div ref={frameRef} className="map-item relative mt-16">
-          {worldData ? (
+          {fetchError ? (
+            <div className="flex h-[420px] flex-col items-center justify-center rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,#0D1C2F,#0A1627)] px-6 text-center">
+              <svg className="mb-4 h-12 w-12 text-red-500/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <h3 className="font-display text-lg font-semibold text-white">Map Data Unavailable</h3>
+              <p className="mt-2 text-sm text-slate-light/80">We were unable to load the export map. Please try again later.</p>
+            </div>
+          ) : worldData ? (
             <WorldMap
               countries={countries}
               selectedMarketId={selectedMarketId}
@@ -323,7 +331,10 @@ export default function D3ExportMap() {
             />
           ) : (
             <div className="flex h-[420px] items-center justify-center rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,#0D1C2F,#0A1627)] text-sm uppercase tracking-[0.28em] text-slate-light/70">
-              Loading Export Map
+              <div className="flex flex-col items-center gap-4">
+                <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/20 border-t-steel-light" />
+                <span>Loading Map</span>
+              </div>
             </div>
           )}
 

@@ -1,21 +1,14 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
+import { useStaggerReveal } from '@/lib/gsapUtils';
 import Link from 'next/link';
 
 export default function Hero() {
   const heroRef = useRef(null);
 
-  useEffect(() => {
-    const tl = gsap.timeline({ delay: 0.5 });
-    
-    tl.fromTo(
-      heroRef.current.querySelectorAll('.hero-content'),
-      { opacity: 0, y: 60 },
-      { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: 'power3.out' }
-    );
-  }, []);
+  useStaggerReveal(heroRef, '.hero-content', { delay: 0.5 });
 
   return (
     <section

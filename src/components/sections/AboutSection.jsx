@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useStaggerReveal } from '@/lib/gsapUtils';
 
 const ABOUT_TEXT =
   'ASPIA PARENTERALS PVT. LTD. (APPL), is a newly launched Company in the field of I.V. Fluids in the pharmaceutical industry having a promising track record, so far, of manufacturing a wide range of high quality Parenteral fluids in large volumes.';
@@ -69,15 +70,7 @@ const FACILITY_IMAGES = [
 export default function AboutSection({ detailed = false }) {
   const sectionRef = useRef(null);
 
-  useEffect(() => {
-    const tl = gsap.timeline({ delay: 0.5 });
-    
-    tl.fromTo(
-      sectionRef.current.querySelectorAll('.about-item'),
-      { opacity: 0, y: 60 },
-      { opacity: 1, y: 0, duration: 1, stagger: 0.2, ease: 'power3.out' }
-    );
-  }, []);
+  useStaggerReveal(sectionRef, '.about-item', { delay: 0.5 });
 
   return (
     <section
@@ -91,12 +84,12 @@ export default function AboutSection({ detailed = false }) {
             <div className="about-item grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
               <div>
                 <div className="section-label">About Aspia</div>
-                <h2 className="section-title max-w-3xl">
+                <h1 className="section-title max-w-3xl">
                   Water and Electrolytes
                   <span className="heading-subtitle">
                     Replacement therapy backed by disciplined sterile manufacturing.
                   </span>
-                </h2>
+                </h1>
                 <p className="mt-8 max-w-3xl text-lg leading-8 text-slate">{ABOUT_TEXT}</p>
                 <div className="mt-10 flex flex-wrap gap-5">
                   <Link href="/products" className="btn-primary">
@@ -159,6 +152,7 @@ export default function AboutSection({ detailed = false }) {
                     src={FACILITY_IMAGES[0].src}
                     alt={FACILITY_IMAGES[0].title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,32,0.06),rgba(7,18,32,0.76))]" />
@@ -184,6 +178,7 @@ export default function AboutSection({ detailed = false }) {
                           src={image.src}
                           alt={image.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                           className="object-cover"
                         />
                       </div>
@@ -277,7 +272,7 @@ export default function AboutSection({ detailed = false }) {
                       alt="Aspia controlled clean corridor"
                       fill
                       className="object-cover"
-                      sizes="(min-width: 1280px) 24vw, (min-width: 768px) 40vw, 100vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,32,0.05),rgba(7,18,32,0.76))]" />
                     <div className="absolute inset-x-0 bottom-0 p-6 text-white">
@@ -298,7 +293,7 @@ export default function AboutSection({ detailed = false }) {
                       alt={FACILITY_IMAGES[0].title}
                       fill
                       className="object-cover"
-                      sizes="(min-width: 1280px) 42vw, (min-width: 1024px) 50vw, 100vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,26,49,0.08),rgba(11,26,49,0.78))]" />
                     <div className="absolute inset-x-0 bottom-0 p-6 text-white md:p-8">
@@ -324,7 +319,7 @@ export default function AboutSection({ detailed = false }) {
                             alt={image.title}
                             fill
                             className="object-cover"
-                            sizes="(min-width: 1280px) 18vw, (min-width: 1024px) 22vw, 100vw"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                           />
                         </div>
                         <div className="px-5 py-5">

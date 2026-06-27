@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
@@ -57,4 +58,21 @@ export function parallax(target, speed = 0.4) {
       scrub: true,
     },
   });
+}
+
+export function useStaggerReveal(ref, selector, options = {}) {
+  useEffect(() => {
+    if (!ref.current) return;
+    const elements = ref.current.querySelectorAll(selector);
+    if (!elements || elements.length === 0) return;
+
+    const { delay = 0, duration = 1, stagger = 0.2, y = 60, ease = 'power3.out', ...rest } = options;
+    const tl = gsap.timeline({ delay });
+
+    tl.fromTo(
+      elements,
+      { opacity: 0, y },
+      { opacity: 1, y: 0, duration, stagger, ease, ...rest }
+    );
+  }, []);
 }

@@ -10,8 +10,8 @@ module.exports = {
         cream: '#F8F9FB',
       },
       fontFamily: {
-        sans:     ['var(--font-body)'],
-        display:  ['var(--font-body)'],
+        sans:     ['var(--font-inter)', 'sans-serif'],
+        display:  ['var(--font-inter)', 'sans-serif'],
         heading:  ['Balhattan', 'Nasional Sans UltraLight', 'sans-serif'],
         nasional: ['Nasional Sans UltraLight', 'system-ui', 'sans-serif'],
       },

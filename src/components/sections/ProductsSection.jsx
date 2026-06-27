@@ -149,12 +149,12 @@ function FullCatalogue({ groupedProducts, query, setQuery, filteredProducts }) {
         <div className="relative grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
           <div className="max-w-4xl">
             <div className="section-label text-slate-light">Full Product Catalogue</div>
-            <h2 className="section-title text-white">
+            <h1 className="section-title text-white">
               Complete Product Catalogue
               <span className="heading-subtitle-light">
                 Search and scan by molecule, strength, or category.
               </span>
-            </h2>
+            </h1>
 
             <p className="mt-8 max-w-3xl text-lg leading-8 text-slate-light">
               Products are grouped into practical sections so buyers and partners can compare the range without extra steps.
@@ -203,12 +203,15 @@ function FullCatalogue({ groupedProducts, query, setQuery, filteredProducts }) {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="m21 21-4.35-4.35M17 10.5A6.5 6.5 0 1 1 4 10.5a6.5 6.5 0 0 1 13 0Z" />
               </svg>
 
+              <label htmlFor="product-search" className="sr-only">Search products</label>
               <input
+                id="product-search"
                 type="text"
                 value={query}
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Search product name, strength, category, or tag..."
-                className="w-full rounded-full border border-slate/10 bg-[#F8FBFD] px-14 py-4 text-sm text-navy shadow-[0_14px_30px_rgba(15,23,42,0.04)] outline-none transition-all duration-300 placeholder:text-slate-light focus:border-steel-light focus:bg-white focus:shadow-[0_18px_36px_rgba(44,74,110,0.12)]"
+                aria-label="Search products"
+                className="w-full rounded-full border border-slate/10 bg-[#F8FBFD] px-14 py-4 text-sm text-navy shadow-[0_14px_30px_rgba(15,23,42,0.04)] focus:ring-2 focus:ring-steel focus:ring-offset-1 focus-visible:outline-none transition-all duration-300 placeholder:text-slate-light focus:border-steel-light focus:bg-white focus:shadow-[0_18px_36px_rgba(44,74,110,0.12)]"
               />
             </div>
 
@@ -227,7 +230,7 @@ function FullCatalogue({ groupedProducts, query, setQuery, filteredProducts }) {
         </div>
 
         <div className="mt-8 flex flex-col gap-3 border-t border-slate/[0.08] pt-6 text-xs font-semibold uppercase tracking-[0.24em] text-slate sm:flex-row sm:items-center sm:justify-between">
-          <span>{filteredProducts.length} of {PRODUCTS.length} products visible</span>
+          <span aria-live="polite" aria-atomic="true">{filteredProducts.length} of {PRODUCTS.length} products visible</span>
           <span>{query ? 'Filtered results' : 'Complete catalogue'}</span>
         </div>
       </div>

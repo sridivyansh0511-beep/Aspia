@@ -29,7 +29,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-white/8 pt-6 text-xs uppercase tracking-[0.24em] text-slate-light/55 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.24em] text-slate-light/55 sm:flex-row sm:items-center sm:justify-between">
           <span>Aspia Global Industrial Exports</span>
           <span>Built For Reliable Worldwide Delivery</span>
         </div>
