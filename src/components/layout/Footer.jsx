@@ -11,16 +11,16 @@ export default function Footer() {
           <div className="max-w-md">
             <Link href="/" className="inline-flex" aria-label="Aspia home">
               <Image
-                src="/aspia-logo-transparent-clean.png"
+                src="/a-world-class--ultra-minimalist-logo-design-for-a--2-2.svg"
                 alt="Aspia"
-                width={1002}
-                height={388}
-                className="h-auto w-[152px] drop-shadow-[0_12px_24px_rgba(0,0,0,0.28)] sm:w-[184px]"
+                width={958}
+                height={238}
+                className="h-auto w-[160px] drop-shadow-[0_12px_24px_rgba(0,0,0,0.28)] sm:w-[200px]"
               />
             </Link>
             <p className="mt-5 text-sm leading-7 text-slate-light">
-              Precision-engineered industrial exports for critical sectors worldwide,
-              with a clean footer that keeps focus on what matters.
+              Precision-engineered intravenous fluid manufacturing for critical healthcare sectors worldwide,
+              maintaining WHO-cGMP standards across all therapeutic infusions.
             </p>
           </div>
 
@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs uppercase tracking-[0.24em] text-slate-light/55 sm:flex-row sm:items-center sm:justify-between">
-          <span>Aspia Global Industrial Exports</span>
+          <span>Aspia Pharmaceuticals Pvt. Ltd. — IV Fluid Manufacturer & Exporter</span>
           <span>Built For Reliable Worldwide Delivery</span>
         </div>
       </div>

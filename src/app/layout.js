@@ -12,20 +12,20 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Aspia Parenterals Pvt. Ltd. — IV Fluid Manufacturer & Exporter",
+  title: "Aspia Pharmaceuticals Pvt. Ltd. — IV Fluid Manufacturer & Exporter",
   description:
-    "Aspia Parenterals manufactures CGMP-certified intravenous fluids including IV nutrition, electrolyte solutions, and therapeutic infusions, exported to 30+ countries.",
+    "Aspia Pharmaceuticals manufactures CGMP-certified intravenous fluids including IV nutrition, electrolyte solutions, and therapeutic infusions, exported to 30+ countries.",
   openGraph: {
-    title: "Aspia Parenterals Pvt. Ltd. — IV Fluid Manufacturer",
+    title: "Aspia Pharmaceuticals Pvt. Ltd. — IV Fluid Manufacturer",
     description: "Manufacturer of CGMP-certified IV fluids, exported to 30+ countries.",
-    url: "https://aspiaparenterals.com",
-    siteName: "Aspia Parenterals",
-    images: [{ url: "/aspia-building.jpg", width: 1200, height: 630, alt: "Aspia Parenterals facility" }],
+    url: "https://aspiapharmaceuticals.com",
+    siteName: "Aspia Pharmaceuticals",
+    images: [{ url: "/aspia-building.jpg", width: 1200, height: 630, alt: "Aspia Pharmaceuticals facility" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aspia Parenterals Pvt. Ltd.",
+    title: "Aspia Pharmaceuticals Pvt. Ltd.",
     description: "CGMP-certified IV fluid manufacturer and global exporter.",
     images: ["/aspia-building.jpg"],
   },

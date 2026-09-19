@@ -45,12 +45,12 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
         <Link href="/" className="group flex items-center" aria-label="Aspia home">
           <Image
-            src="/aspia-logo-transparent-clean.png"
+            src="/a-world-class--ultra-minimalist-logo-design-for-a--2-2.svg"
             alt="Aspia"
-            width={1002}
-            height={388}
+            width={958}
+            height={238}
             priority
-            className="h-auto w-[132px] drop-shadow-[0_10px_24px_rgba(0,0,0,0.28)] transition-transform duration-300 group-hover:scale-[1.02] sm:w-[156px] lg:w-[188px]"
+            className="h-auto w-[140px] drop-shadow-[0_10px_24px_rgba(0,0,0,0.28)] transition-transform duration-300 group-hover:scale-[1.02] sm:w-[160px] lg:w-[180px]"
           />
         </Link>
 

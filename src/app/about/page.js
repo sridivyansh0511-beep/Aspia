@@ -1,9 +1,9 @@
 import AboutSection from '@/components/sections/AboutSection';
 
 export const metadata = {
-  title: "About Aspia Parenterals — CGMP IV Fluid Manufacturer",
+  title: "About Aspia Pharmaceuticals — CGMP IV Fluid Manufacturer",
   description:
-    "Learn about Aspia Parenterals' manufacturing capabilities, sterile production technology, quality certifications, and global export footprint.",
+    "Learn about Aspia Pharmaceuticals' manufacturing capabilities, sterile production technology, quality certifications, and global export footprint.",
 };
 
 

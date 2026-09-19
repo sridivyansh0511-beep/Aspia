@@ -43,12 +43,12 @@ export default function SplashScreen() {
     >
       <div className="flex flex-col items-center justify-center gap-8 px-6">
         <Image
-              src="/aspia-logo-transparent-clean.png"
+          src="/a-world-class--ultra-minimalist-logo-design-for-a--2-2.svg"
           alt="Aspia"
-          width={1002}
-          height={388}
+          width={958}
+          height={238}
           priority
-          className="animate-splash-logo-fade h-[160px] w-auto drop-shadow-[0_18px_36px_rgba(0,0,0,0.28)]"
+          className="animate-splash-logo-fade h-auto w-[240px] drop-shadow-[0_18px_36px_rgba(0,0,0,0.28)] md:w-[320px]"
         />
 
         <div className="h-[2px] w-44 overflow-hidden rounded-full bg-white/10">

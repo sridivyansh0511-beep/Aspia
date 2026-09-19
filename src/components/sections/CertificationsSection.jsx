@@ -26,6 +26,14 @@ export default function CertificationsSection() {
       category: 'Quality Management',
       image: '/certificates/iso-9001-2015.png',
       accent: 'from-[#eef6ff] via-white to-[#f8fbff]',
+    },
+    {
+      name: 'WHO-GMP',
+      description:
+        'World Health Organization Good Manufacturing Practices certification validating strict adherence to global pharmaceutical production, quality control, and safety protocols.',
+      category: 'GLOBAL COMPLIANCE',
+      image: '/certificates/who-gmp.png',
+      accent: 'from-[#f0f7ff] via-white to-[#f4f9ff]',
     }
   ];
 
@@ -70,7 +78,7 @@ export default function CertificationsSection() {
           </div>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {certifications.map((cert, index) => (
             <div key={cert.name} className="cert-item">
               <div className="panel-light h-full overflow-hidden">
@@ -92,7 +100,7 @@ export default function CertificationsSection() {
                         src={cert.image}
                         alt={cert.name}
                         fill
-                        className="object-contain"
+                        className={`object-contain ${cert.mixBlend ? 'mix-blend-multiply' : ''}`}
                         sizes="(min-width: 1024px) 320px, 100vw"
                       />
                     </div>
@@ -112,7 +120,7 @@ export default function CertificationsSection() {
 
         <div className="mt-16 grid gap-5 sm:grid-cols-3">
           {[
-            ['02', 'Verified Certifications'],
+            ['03', 'Verified Certifications'],
             ['GMP', 'Manufacturing Discipline'],
             ['ISO', 'Documented Quality Systems'],
           ].map(([value, label]) => (

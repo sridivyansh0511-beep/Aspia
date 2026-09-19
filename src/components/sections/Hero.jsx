@@ -50,7 +50,7 @@ export default function Hero() {
             className="hero-content mt-8 max-w-3xl text-lg leading-relaxed text-white md:text-[1.55rem]"
             style={{ textShadow: '0 2px 16px rgba(10, 22, 40, 0.45)' }}
           >
-            ASPIA Parenterals Pvt. Ltd. manufactures high-quality parenteral fluids in
+            ASPIA Pharmaceuticals Pvt. Ltd. manufactures high-quality parenteral fluids in
             large volumes with modern production lines, automated technology, and a
             quality-first approach built for dependable healthcare supply.
           </p>
@@ -58,7 +58,7 @@ export default function Hero() {
             <Link href="/products" className="btn-primary">
               Explore Product Range
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4-4m4 4l-4-4" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 12h15" />
               </svg>
             </Link>
             <Link

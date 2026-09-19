@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useStaggerReveal } from '@/lib/gsapUtils';
 
 const ABOUT_TEXT =
-  'ASPIA PARENTERALS PVT. LTD. (APPL), is a newly launched Company in the field of I.V. Fluids in the pharmaceutical industry having a promising track record, so far, of manufacturing a wide range of high quality Parenteral fluids in large volumes.';
+  'ASPIA PHARMACEUTICALS PVT. LTD. (APPL), is a newly launched Company in the field of I.V. Fluids in the pharmaceutical industry having a promising track record, so far, of manufacturing a wide range of high quality Parenteral fluids in large volumes.';
 
 const STRENGTH_TEXT =
   'ASPIA has embraced modern-age technology in its manufacturing lines. Our products are manufactured using highly sophisticated and automated FFS / BFS technology and also in glass bottles. With quality as honest as our foundation and with the most advanced technology, today we meet and exceed the current GMP (Good Manufacturing Practices) and GLP (Good Laboratory Practices) standards.';
@@ -95,7 +95,7 @@ export default function AboutSection({ detailed = false }) {
                   <Link href="/products" className="btn-primary">
                     View Product Range
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4-4m4 4-4-4" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 12h15" />
                     </svg>
                   </Link>
                   <Link href="/contact" className="btn-outline">
@@ -221,7 +221,7 @@ export default function AboutSection({ detailed = false }) {
                 <Link href="/products" className="btn-primary">
                   View Offerings
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4-4m4 4-4-4" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 12h15" />
                   </svg>
                 </Link>
               </div>
